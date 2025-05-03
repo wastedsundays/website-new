@@ -3,7 +3,7 @@ import { ThemeProvider } from './context/ThemeContext';
 
 import HomePage from './pages/HomePage';
 
-import Navigation from './components/Navigation';
+import Header from './components/Header';
 
 
 function App() {
@@ -13,7 +13,7 @@ function App() {
     <>
     <ThemeProvider>
       <Router>
-        <Navigation />
+        <Header />
 
         <Routes>
           <Route path='/' element={<HomePage />} />
