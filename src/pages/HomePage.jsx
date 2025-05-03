@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 //eslint-disable-next-line
 import { motion } from 'framer-motion';
 import { REST_PATH } from '../globals/globals';
+import FeaturedWork from '../components/FeaturedWork';
 
 
 
@@ -37,13 +38,20 @@ const HomePage = () => {
         fetchHomeData();
         }, [homeRestPath, featuredWorkPath]);
 
-        console.log('Home Data:', homeData);
-        console.log('Featured Work Data:', featuredWorkData);
-
     return (
         <>
         {homeLoaded ? (
-            <p>Home Page</p> 
+            <>
+                <h1>Home Page</h1>
+                
+                <section className='featured-work-section'>
+                    <FeaturedWork featuredWorkData={featuredWorkData} />
+                </section>
+
+                <section className='wp-content'>
+                    <div dangerouslySetInnerHTML={{ __html: homeData.content.rendered }}></div>
+                </section>
+            </>
         ) : ( 
             <p>Loading...</p>
         )}
