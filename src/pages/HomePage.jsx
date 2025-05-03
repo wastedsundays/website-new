@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { REST_PATH } from '../globals/globals';
 import FeaturedWork from '../components/FeaturedWork';
+import Loading from '../components/Loading';
 
 
 
@@ -53,7 +54,7 @@ const HomePage = () => {
                 </section>
             </>
         ) : ( 
-            <p>Loading...</p>
+            <Loading />
         )}
         
         </>
