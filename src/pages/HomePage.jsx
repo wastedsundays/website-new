@@ -42,17 +42,34 @@ const HomePage = () => {
     return (
         <>
         {homeLoaded ? (
-            <>
-                <h1>Home Page</h1>
+            <motion.main
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 1.5 }}
+            >
+                <section className='hero-section'>
+                    <div className='hero-image'>
+                            <img src="https://picsum.photos/2000/1000" alt="Hero" />
+                    </div>
+                    <div className='hero-overlay'>
+                        <h1>Adam H</h1>
+                        <p>Front End Developer</p>
+                    </div>
+                </section>
                 
                 <section className='featured-work-section'>
                     <FeaturedWork featuredWorkData={featuredWorkData} />
                 </section>
 
-                <section className='wp-content'>
+                <section className='wp-content-section'>
                     <div dangerouslySetInnerHTML={{ __html: homeData.content.rendered }}></div>
                 </section>
-            </>
+
+                <section className='contact-section'>
+                    <p>Contact form goes here</p>
+                </section>
+            </motion.main>
         ) : ( 
             <Loading />
         )}
