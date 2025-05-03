@@ -1,6 +1,9 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { ThemeProvider } from './context/ThemeContext';
 
 import HomePage from './pages/HomePage';
+
+import Navigation from './components/Navigation';
 
 
 function App() {
@@ -8,7 +11,10 @@ function App() {
 
   return (
     <>
+    <ThemeProvider>
       <Router>
+        <Navigation />
+
         <Routes>
           <Route path='/' element={<HomePage />} />
           <Route path='/about' element={<h1>About</h1>} />
@@ -18,6 +24,7 @@ function App() {
           <Route path='*' element={<h1>Error Page</h1>} />
         </Routes>
       </Router>
+    </ThemeProvider>
     </>
   )
 }
