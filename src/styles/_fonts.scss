@@ -1,0 +1,12 @@
+// Fluid typography sizing by https://utopia.fyi/type/calculator?c=320,16,1.2,1240,20,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12
+
+:root {
+    --step--2: clamp(0.6944rem, 0.6083rem + 0.4309vw, 1.12rem);
+    --step--1: clamp(0.8333rem, 0.7186rem + 0.5738vw, 1.4rem);
+    --step-0: clamp(1rem, 0.8481rem + 0.7595vw, 1.75rem);
+    --step-1: clamp(1.2rem, 1rem + 1vw, 2.1875rem);
+    --step-2: clamp(1.44rem, 1.1778rem + 1.3108vw, 2.7344rem);
+    --step-3: clamp(1.728rem, 1.3857rem + 1.7114vw, 3.418rem);
+    --step-4: clamp(2.0736rem, 1.6283rem + 2.2267vw, 4.2725rem);
+    --step-5: clamp(2.4883rem, 1.9106rem + 2.8884vw, 5.3406rem);
+  }
