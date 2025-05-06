@@ -17,8 +17,6 @@ const FeaturedWork = ({featuredWorkData}) => {
     }
 
     const featuredItems = randomizeData(featuredWorkData);
-    console.log('Featured Items:', featuredItems);
-
 
     return (
         <>
