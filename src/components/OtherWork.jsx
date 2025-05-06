@@ -59,11 +59,15 @@ const OtherWork = ({ id }) => {
                     <div className='other-work-grid'>
                         {randomWork.map((project, i) => (
                             <div className='other-project-card' key={i}>
-                                <h3 className='card-title'>{project.title.rendered}</h3>
                                 <Link to={`/work/${project.slug}`}>
                                     {project.featured_images['medium'] && (
-                                        <img srcSet={project.featured_images['medium'].srcset}/>
+                                        <img
+                                        src={project.featured_images['medium'].src} 
+                                        srcSet={project.featured_images['medium'].srcset}
+                                        alt={project.featured_images['medium'].alt}
+                                        />
                                     )}
+                                    <h3 className='project-card-title'>{project.title.rendered}</h3>
                                 </Link>
                             </div>
                         ))}

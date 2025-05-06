@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { AnimatePresence, motion } from 'framer-motion';
 import { REST_PATH } from '../globals/globals';
 
+import OtherWork from "../components/OtherWork";
 import Loading from "../components/Loading";
 import ErrorPage from "./ErrorPage";
 
@@ -122,7 +123,7 @@ const SinglePage = () => {
 
                         </section>
                         <div>
-                            <p>Other Projects block goes here</p>
+                            <OtherWork id={[projectData[0].id]} />
                         </div>
                         <div>
                             <p>Contact Form goes here</p>
