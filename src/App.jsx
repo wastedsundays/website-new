@@ -6,6 +6,7 @@ import HomePage from './pages/HomePage';
 import WorkPage from './pages/WorkPage';
 import SinglePage from './pages/SinglePage';
 import AboutPage from './pages/AboutPage';
+import ContactPage from './pages/ContactPage';
 import ErrorPage from './pages/ErrorPage';
 
 import Header from './components/Header';
@@ -27,7 +28,7 @@ function App() {
           <Route path='/about' element={<AboutPage />} />
           <Route path='/work' element={<WorkPage />} />
           <Route path='/work/:slug' element={<SinglePage />} />
-          <Route path='/contact' element={<h1>Contact</h1>} />
+          <Route path='/contact' element={<ContactPage />} />
           <Route path='*' element={<ErrorPage />} />
         </Routes>
         <Footer />
