@@ -4,6 +4,7 @@ import { EmailProvider } from './context/EmailContext';
 
 import HomePage from './pages/HomePage';
 import WorkPage from './pages/WorkPage';
+import SinglePage from './pages/SinglePage';
 import ErrorPage from './pages/ErrorPage';
 
 import Header from './components/Header';
@@ -24,7 +25,7 @@ function App() {
           <Route path='/' element={<HomePage />} />
           <Route path='/about' element={<h1>About</h1>} />
           <Route path='/work' element={<WorkPage />} />
-          <Route path='/work/:slug' element={<h1>Work Single</h1>} />
+          <Route path='/work/:slug' element={<SinglePage />} />
           <Route path='/contact' element={<h1>Contact</h1>} />
           <Route path='*' element={<ErrorPage />} />
         </Routes>
