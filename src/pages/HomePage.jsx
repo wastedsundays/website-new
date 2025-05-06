@@ -2,9 +2,10 @@ import { useState, useEffect } from 'react';
 //eslint-disable-next-line
 import { motion } from 'framer-motion';
 import { REST_PATH } from '../globals/globals';
+
 import FeaturedWork from '../components/FeaturedWork';
 import Loading from '../components/Loading';
-
+import ContactForm from '../components/ContactForm';
 
 
 const HomePage = () => {
@@ -67,7 +68,7 @@ const HomePage = () => {
                 </section>
 
                 <section className='contact-section'>
-                    <p>Contact form goes here</p>
+                    <ContactForm />
                 </section>
             </motion.main>
         ) : ( 

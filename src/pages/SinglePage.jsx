@@ -7,6 +7,7 @@ import { REST_PATH } from '../globals/globals';
 import OtherWork from "../components/OtherWork";
 import Loading from "../components/Loading";
 import ErrorPage from "./ErrorPage";
+import ContactForm from "../components/ContactForm";
 
 
 const SinglePage = () => {
@@ -126,7 +127,7 @@ const SinglePage = () => {
                             <OtherWork id={[projectData[0].id]} />
                         </div>
                         <div>
-                            <p>Contact Form goes here</p>
+                            <ContactForm />
                         </div>
                         
                     </>

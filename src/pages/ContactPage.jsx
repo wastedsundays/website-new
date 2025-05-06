@@ -1,5 +1,6 @@
 // eslint-disable-next-line
 import { motion } from 'framer-motion';
+import ContactForm from '../components/ContactForm';
 
 
 const ContactPage = () => {
@@ -12,7 +13,7 @@ const ContactPage = () => {
             >
 
             <section className='contact'>
-                <p>Contact form goes here</p>
+                <ContactForm />
             </section>
         </motion.main>
     );
