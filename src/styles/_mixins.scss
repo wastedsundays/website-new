@@ -1,0 +1,51 @@
+@mixin theme-vars($theme-map) {
+    @each $key, $value in $theme-map {
+      --#{$key}: #{$value};
+    }
+  }
+  @mixin image-adjustments {
+    filter: brightness(var(--image-brightness)) contrast(var(--image-contrast)) saturate(var(--image-saturate));
+    transition: filter .5s ease-in-out;
+  }
+
+  @mixin depth-0 {
+    border: 1px solid var(--border-color);
+  }
+  
+  @mixin depth-3 {
+    box-shadow: 0 1px 8px 0 rgba(0,0,0,.12), 0 3px 4px 0 rgba(0,0,0,.14), 0 3px 3px -2px rgba(0,0,0,.2);
+    border: 1px solid var(--border-color);
+  }
+
+  @mixin depth-3-noborder {
+    box-shadow: 0 1px 8px 0 rgba(0,0,0,.12), 0 3px 4px 0 rgba(0,0,0,.14), 0 3px 3px -2px rgba(0,0,0,.2);
+    border: none;
+  }
+
+  @mixin depth-6 {
+    box-shadow: 0 1px 18px 0 rgba(0,0,0,.12), 0 6px 10px 0 rgba(0,0,0,.14), 0 3px 5px -1px rgba(0,0,0,.2);
+    border: 1px solid var(--border-color);
+  }
+
+  @mixin depth-6-noborder {
+    box-shadow: 0 1px 18px 0 rgba(0,0,0,.12), 0 6px 10px 0 rgba(0,0,0,.14), 0 3px 5px -1px rgba(0,0,0,.2);
+    border: none;
+  }
+
+  @mixin depth-8 {
+    box-shadow: 0 3px 14px 2px rgba(0,0,0,.12), 0 8px 10px 1px rgba(0,0,0,.14), 0 5px 5px -3px rgba(0,0,0,.2);
+    border: 1px solid var(--border-color); 
+  }
+
+  @mixin depth-8-noborder {
+    box-shadow: 0 3px 14px 2px rgba(0,0,0,.12), 0 8px 10px 1px rgba(0,0,0,.14), 0 5px 5px -3px rgba(0,0,0,.2);
+  }
+
+  @mixin depth-12 {
+    box-shadow: 0 5px 22px 4px rgba(0,0,0,.12), 0 12px 17px 2px rgba(0,0,0,.14), 0 7px 8px -4px rgba(0,0,0,.2);
+    border: 1px solid var(--border-color); 
+  }
+
+  @mixin depth-12-noborder {
+    box-shadow: 0 5px 22px 4px rgba(0,0,0,.12), 0 12px 17px 2px rgba(0,0,0,.14), 0 7px 8px -4px rgba(0,0,0,.2);
+  }

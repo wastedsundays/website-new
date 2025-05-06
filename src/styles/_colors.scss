@@ -1,0 +1,40 @@
+$theme-universal: (
+    'primary-color': #0076B6,
+    'primary-light': #33A6D9,
+    'primary-dark': #005A88,
+    'text-on-primary': #e0e0e0,
+    'secondary-color': #FF9800,
+    'secondary-light': #FFB74D,
+    'secondary-dark': #F57C00,
+    'button-text': #FAFBFD
+    );
+
+$theme-light: (
+    'primary-text': #222222,
+    'secondary-text': #666666,
+    'disabled-text': #BDBDBD,
+    'background-color': #FAFBFD,
+    'background-surface': #F5F9FC,
+    'border-color': #e8e8e8,
+    'nav-background': rgba(245, 249, 252, 0.85),
+    'input-background': #F5F9FC,
+    'interaction-hover': #F5F9FC,
+    'image-brightness': 1,
+    'image-contrast': 1,
+    'image-saturate': 1
+);
+
+$theme-dark: (
+    'primary-text': #e0e0e0,
+    'secondary-text': #BDBDBD,
+    'disabled-text': #535353,
+    'background-color': #121212,
+    'background-surface': #1C1C1C,
+    'border-color': rgba(250, 251, 253, .2),
+    'nav-background': rgba(28, 28, 28, 0.85),
+    'input-background': rgba(200, 200, 200, .15),
+    'interaction-hover': rgba(200, 200, 200, .2),
+    'image-brightness': 0.85,
+    'image-contrast': .95,
+    'image-saturate': .9
+);
