@@ -1,0 +1,22 @@
+@use 'colors';
+@use 'mixins';
+
+:root {
+    @include mixins.theme-vars(colors.$theme-universal);
+
+}
+
+.light {
+    @include mixins.theme-vars(colors.$theme-light);
+}
+
+.dark {
+    @include mixins.theme-vars(colors.$theme-dark);
+}
+
+body {
+    margin: 0;
+    background-color: var(--background-color);
+    color: var(--primary-text);
+}
+
