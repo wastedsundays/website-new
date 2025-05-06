@@ -80,23 +80,45 @@ const SinglePage = () => {
                             </div>
                         </section>
 
-                        <section className='project-tools-container'>
-                        {projectData[0].acf.work_tools && projectData[0].acf.work_tools.length > 0 && (
-                          <div>
-                            <h2 style={{color: projectData[0].acf.project_primary_color}}>Toolbox</h2>
-                            
-                            <div className='project-tools'>                              
-                                {projectData[0].acf.work_tools.map((tool, i) => (
-                                    <div key={i}>
-                                        <div className={tool.post_title}>                                     
-                                            <img src={getToolImage(tool.post_title)} alt={`${tool.post_title} icon card`} />
-                                        </div>
-                                    </div>
-                                ))}
-                            </div>
-                          </div>
+                        <section className='project-details'>
+                            <h2>Details</h2>
 
-                      )}
+                            <div className='project-description'>
+                                            <p>{projectData[0].acf.project_description}</p>
+                            </div>
+
+                            <div dangerouslySetInnerHTML={{__html:projectData[0].content.rendered}}></div>
+                        
+                            {projectData[0].acf.live_project_site && 
+                                        (<a href={projectData[0].acf.live_project_site} target='_blank' rel='noreferrer'>
+                                            See It
+                                        </a>)
+                                        }
+
+                            {projectData[0].acf.project_repo &&
+                                (<a href={projectData[0].acf.project_repo} target='_blank' rel='noreferrer'>
+                                    GitHub
+                                    </a>)
+                            }
+                        </section>
+
+                        <section className='project-tools-container'>
+                            {projectData[0].acf.work_tools && projectData[0].acf.work_tools.length > 0 && (
+                            <div>
+                                <h2 style={{color: projectData[0].acf.project_primary_color}}>Toolbox</h2>
+                                
+                                <div className='project-tools'>                              
+                                    {projectData[0].acf.work_tools.map((tool, i) => (
+                                        <div key={i}>
+                                            <div className={tool.post_title}>                                     
+                                                <img src={getToolImage(tool.post_title)} alt={`${tool.post_title} icon card`} />
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+
+                            )}
 
                         </section>
                         <div>
