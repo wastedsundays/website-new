@@ -49,14 +49,19 @@ const AboutPage = () => {
                             <h1 className='step-6'>About Adam</h1>
                         </div>
                     </section>
+
+                    <section className='details-section'>
                         <h2>{aboutRestData.title.rendered}</h2>
                         <div dangerouslySetInnerHTML={{ __html: aboutRestData.content.rendered }} />
-                        <section className='toolbox-section'>
-                            <Toolbox /> 
-                        </section>
-                        <section className='contact-form-section'>
-                            <ContactForm />
-                        </section>
+                    </section>
+                    
+                    <section className='toolbox-section'>
+                        <Toolbox /> 
+                    </section>
+                    
+                    <section className='contact-section'>
+                        <ContactForm />
+                    </section>
 
             </motion.main>
         ) : (

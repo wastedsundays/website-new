@@ -126,9 +126,9 @@ const SinglePage = () => {
                         <div>
                             <OtherWork id={[projectData[0].id]} />
                         </div>
-                        <div>
+                        <section className='contact-section'>
                             <ContactForm />
-                        </div>
+                        </section>
                         
                     </>
                 ) : (

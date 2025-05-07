@@ -74,7 +74,7 @@ const WorkPage = () => {
                             })}
                         </section>
 
-                        <section className='contact'>
+                        <section className='contact-section'>
                             <ContactForm />
                         </section>
                         

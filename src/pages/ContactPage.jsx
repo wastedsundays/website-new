@@ -12,7 +12,7 @@ const ContactPage = () => {
             transition={{ duration: 1.5 }}
             >
 
-            <section className='contact'>
+            <section className='contact-section'>
                 <ContactForm />
             </section>
         </motion.main>
