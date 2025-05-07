@@ -46,7 +46,7 @@ const AboutPage = () => {
                             <img src={heroImageAbout} alt="Hero" />
                         </div>
                         <div className='hero-overlay'>
-                            <h1>About Page</h1>
+                            <h1 className='step-6'>About Adam</h1>
                         </div>
                     </section>
                         <h2>{aboutRestData.title.rendered}</h2>

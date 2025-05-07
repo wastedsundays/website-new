@@ -55,7 +55,7 @@ const HomePage = () => {
                             <img src={heroImage} alt='Hero Image' />
                     </div>
                     <div className='hero-overlay'>
-                        <h1>Adam H</h1>
+                        <h1 className='step-7'>Adam H</h1>
                         <p>Front End Developer</p>
                     </div>
                 </section>

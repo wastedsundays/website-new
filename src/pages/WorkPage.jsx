@@ -46,7 +46,7 @@ const WorkPage = () => {
                                 <img src={heroImageWork} alt="Hero" />
                             </div>
                             <div className='hero-overlay'>
-                                <h1>My Work</h1>
+                                <h1 className='step-6'>My Work</h1>
                                 
                             </div>
                         </section>

@@ -53,9 +53,9 @@ const ContactForm = () => {
             {emailSent ? (
                 <div className='contact-text-container'>
                     {contactLocation.pathname === '/contact' ? (
-                        <h1 className='contact-heading fs-hv2'>Thanks!</h1>
+                        <h1 className='contact-heading step-6'>Thanks!</h1>
                         ) : (
-                        <h2 className='contact-heading fs-h2'>Thanks!</h2>
+                        <h2 className='contact-heading step-5'>Thanks!</h2>
                     )}
                     <p>Your message is on the way. I will be in touch shortly.</p>
                     <p>Here's some other ways to track me down:</p>
@@ -73,9 +73,9 @@ const ContactForm = () => {
                 <>
                 <div className='contact-text-container'>
                     {contactLocation.pathname === '/contact' ? (
-                        <h1 className='contact-heading'>Hello!</h1>
+                        <h1 className='contact-heading step-6'>Hello!</h1>
                         ) : (
-                        <h2 className='contact-heading'>Hello!</h2>
+                        <h2 className='contact-heading step-5'>Hello!</h2>
                     )}
 
                     <p>I&apos;d love to hear from you! Whether you have a question about what I do (or about your current website), a collaboration opportunity,  or you just want to say hi, feel free to reach out.</p>
@@ -86,15 +86,15 @@ const ContactForm = () => {
                         <input type='text' id='website' name='website' autoComplete='off' tabIndex='-1' onChange={handleChange} />
                     </div>
                     <div>
-                        <label htmlFor='user_name'>Name</label>
+                        <label className='step--1' htmlFor='user_name'>Name</label>
                         <input type='text' id='user_name' name='user_name' aria-required='true' required onChange={handleChange}/>
                     </div>
                     <div>
-                        <label htmlFor='user_email'>Email</label>
+                        <label className='step--1' htmlFor='user_email'>Email</label>
                         <input type='email' id='user_email' name='user_email' aria-required='true' required onChange={handleChange}/>
                     </div>
                     <div>
-                        <label htmlFor='message'>Message</label>
+                        <label className='step--1' htmlFor='message'>Message</label>
                         <textarea id='message' name='message' aria-required='true' required onChange={handleChange}></textarea>
                     </div>
 

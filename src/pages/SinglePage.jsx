@@ -76,8 +76,8 @@ const SinglePage = () => {
                                     />
                                 )}
                             </div>
-                            <div className='hero-image-overlay'>
-                                <h1>{projectData[0].title.rendered}</h1>
+                            <div className='hero-overlay'>
+                                <h1 className='step-5'>{projectData[0].title.rendered}</h1>
                                 
                             </div>
                         </section>
