@@ -21,7 +21,7 @@ const FeaturedWork = ({featuredWorkData}) => {
     return (
         <>
             <div className='featured-work-container project-display-container'>
-                <p>Featured Work Section</p>
+                <h2 className='step-5'>Featured Work</h2>
                 {featuredItems.map((project, i) => (
                     <article key={i} className = 'featured-work-card'>
                         <Link to={`/work/${project.slug}`} className=''>
