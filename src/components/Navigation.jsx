@@ -12,21 +12,21 @@ const Navigation = () => {
         setMenuStatus(menuStatus === "closed" ? "open" : "closed");
 
         if (menuStatus === "open") {
-            document.body.style.overflow = "auto";
+            // document.body.style.overflow = "auto";
         } else {
-            document.body.style.overflow = "hidden";
+            // document.body.style.overflow = "hidden";
         }
     };
 
     const closeMenu = () => {
         setMenuStatus("closed");
-        document.body.style.overflow = "auto";
+        // document.body.style.overflow = "auto";
     };
 
     const handleResize = () => {
         if (window.innerWidth > 800) {
             setMenuStatus("closed");
-            document.body.style.overflow = "auto";
+            // document.body.style.overflow = "auto";
         }
     };
 
@@ -65,8 +65,8 @@ const Navigation = () => {
                     <li className={activeTab === 1 ? 'active-menu-item' : 'menu-item'}><Link to="/work" onClick={closeMenu}>Work</Link></li>
                     <li className={activeTab === 2 ? 'active-menu-item' : 'menu-item'}><Link to="/about" onClick={closeMenu}>About</Link></li>
                     <li className={activeTab === 3 ? 'active-menu-item' : 'menu-item'}><Link to="/contact" onClick={closeMenu}>Contact</Link></li>
-                    <ThemeToggle />
                 </ul>
+                <ThemeToggle />
             </nav>
             <button className={`hamburger-button ${menuStatus}`} onClick={toggleMenu}>
                             {/* {menuStatus} */}

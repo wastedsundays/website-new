@@ -3,7 +3,6 @@
 
 :root {
     @include mixins.theme-vars(colors.$theme-universal);
-
 }
 
 .light {
@@ -20,3 +19,6 @@ body {
     color: var(--primary-text);
 }
 
+* {
+    transition: background-color 1s ease, color 1s ease;
+}

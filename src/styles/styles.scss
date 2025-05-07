@@ -2,4 +2,12 @@
 @use 'fonts';
 @use 'colors';
 @use 'mixins';
+@use 'header';
 @use 'body';
+@use 'navigation';
+
+
+img {
+    max-width: 100%;
+    height: auto;
+}

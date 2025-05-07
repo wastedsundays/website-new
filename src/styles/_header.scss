@@ -1,0 +1,86 @@
+header {
+    background-color: var(--background-color);
+    height: 0;
+}
+
+#logo {
+    width: 4rem;
+    height: 4rem;
+    position: relative;
+    z-index:9999;
+    fill: var(--primary-text);
+    transition: fill .75s ease;
+    
+    circle {
+        fill: var(--nav-background);
+    }
+
+
+    @media (min-width: 50rem) {
+        width: 5rem;
+        height: 5rem;
+
+        circle {
+            fill: var(--background-color);
+        }
+    }
+}
+
+.hamburger-button {
+    position: fixed;
+    top: .625rem;
+    right: .625rem;
+    z-index: 9999;
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+    width: 3.75rem;
+
+    svg {
+        fill: var(--primary-text);
+    }
+
+    @media (min-width: 50rem) {
+        display: none;
+    }
+}
+
+.hamburger-button:hover {
+    svg {
+        fill: var(--primary-color);
+        cursor: pointer;
+    }
+}
+
+.hamburger-button.open {
+    #svg-a {
+        transform: rotate(45deg) translate(10px, 10px);
+        transition: transform 0.5s ease-in-out;
+    }
+
+    #svg-b {
+        opacity: 0;
+        transform: scale(0);
+        transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    }
+
+    #svg-c {
+        transform: rotate(-45deg) translate(10px, -10px);
+        transition: transform 0.5s ease-in-out;
+    }
+}
+
+.hamburger-button.closed {
+    #svg-a {
+        transition: transform 0.5s ease-in-out;
+    }
+
+    #svg-b {
+        opacity: 1;
+        transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    }
+
+    #svg-c {
+        transition: transform 0.5s ease-in-out;
+    }
+}
+
