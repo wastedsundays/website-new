@@ -45,7 +45,7 @@ const AboutPage = () => {
                         <div className='hero-image'>
                             <img src={heroImageAbout} alt="Hero" />
                         </div>
-                        <div className='hero-image-overlay'>
+                        <div className='hero-overlay'>
                             <h1>About Page</h1>
                         </div>
                     </section>
