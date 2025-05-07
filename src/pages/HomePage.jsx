@@ -6,6 +6,7 @@ import { REST_PATH } from '../globals/globals';
 import FeaturedWork from '../components/FeaturedWork';
 import Loading from '../components/Loading';
 import ContactForm from '../components/ContactForm';
+import heroImage from '../images/241-2000x1000.jpg';
 
 
 const HomePage = () => {
@@ -51,7 +52,7 @@ const HomePage = () => {
             >
                 <section className='hero-section'>
                     <div className='hero-image'>
-                            <img src="https://picsum.photos/2000/1000" alt="Hero" />
+                            <img src={heroImage} alt='Hero Image' />
                     </div>
                     <div className='hero-overlay'>
                         <h1>Adam H</h1>

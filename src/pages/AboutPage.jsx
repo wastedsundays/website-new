@@ -5,6 +5,7 @@ import { REST_PATH } from '../globals/globals';
 import Loading from '../components/Loading';
 import Toolbox from '../components/Toolbox';
 import ContactForm from '../components/ContactForm';
+import heroImageAbout from '../images/483-2000x1000.jpg';
 
 
 
@@ -42,7 +43,7 @@ const AboutPage = () => {
 
                     <section className='hero-section'>
                         <div className='hero-image'>
-                            <img src="https://picsum.photos/2000/1000" alt="Hero" />
+                            <img src={heroImageAbout} alt="Hero" />
                         </div>
                         <div className='hero-image-overlay'>
                             <h1>About Page</h1>

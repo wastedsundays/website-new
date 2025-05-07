@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 import { REST_PATH } from '../globals/globals';
 import Loading from '../components/Loading';
 import ContactForm from '../components/ContactForm';
+import heroImageWork from '../images/210-2000x1000.jpg';
 
 const WorkPage = () => {
     const workRestPath = `${REST_PATH}ahdesigns-work?acf_format=standard`;
@@ -42,7 +43,7 @@ const WorkPage = () => {
                     >
                         <section className='hero-section'>
                             <div className='hero-image'>
-                                <img src="https://picsum.photos/2000/1000" alt="Hero" />
+                                <img src={heroImageWork} alt="Hero" />
                             </div>
                             <div className='hero-image-overlay'>
                                 <h1>My Work</h1>
