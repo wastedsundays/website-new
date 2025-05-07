@@ -76,40 +76,22 @@ nav.open {
 
     nav.closed, nav.open {
         transform: translateX(0);
-        // height: 2.5rem;
+        height: 2.8125rem;
 
     }
 }
-
-// @media (min-width: 50rem) {
-//     nav.closed, nav.open {
-//         transform: translateX(0);
-//         transition: transform .5s ease-in-out;
-//         height: 3rem;
-//     }
-
-//     }
-
-
-
-// nav li {
-//     padding: 0 1rem;
-// }
-
-
-// nav ul {
-//     font-size: 2.5rem;
-// }
-
-// nav li {
-//     padding: 0 1rem;
-// }
 
 .theme-toggle {
     background-color: transparent;
     border: none;
     width: 2.75rem;
     padding: 0;
+    cursor: pointer;
+
+    svg {
+        fill: var(--primary-text);
+        transition: fill .5s ease-in-out;
+    }
 
     @media (min-width: 50rem) {
         position: fixed;

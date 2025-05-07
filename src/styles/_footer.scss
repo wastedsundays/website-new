@@ -1,0 +1,33 @@
+footer {
+    background-color: var(--primary-color);
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+
+    color: var(--text-on-primary);
+    padding: .5rem 1rem;
+}
+
+.footer-icons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+
+    a {
+        line-height: 0;
+    }
+
+
+    svg {
+        width: 3rem;
+        fill: var(--button-text);  
+        transition: fill .5s ease;      
+    }
+
+    svg:hover {
+        fill: var(--secondary-light);
+
+    }
+
+}
