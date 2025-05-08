@@ -31,3 +31,15 @@ footer {
     }
 
 }
+
+@media (min-width: 600px) {
+    footer {
+        padding: 1rem;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .footer-icons {
+        margin-top: 0;
+    }
+}
