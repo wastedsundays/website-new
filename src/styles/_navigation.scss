@@ -84,7 +84,7 @@ nav.open {
 .theme-toggle {
     background-color: transparent;
     border: none;
-    width: 2.75rem;
+    width: 2.125rem;
     padding: 0;
     cursor: pointer;
 
@@ -95,7 +95,7 @@ nav.open {
 
     @media (min-width: 50rem) {
         position: fixed;
-        right: .75rem;
-        top: .1rem;
+        right: 1rem;
+        top: .375rem;
     }
 }
