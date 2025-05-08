@@ -15,21 +15,33 @@ const WorkPage = () => {
 
     useEffect(() => {
         const fetchWorkData = async () => {
-        const workResponse = await fetch(workRestPath);
-        if (!workResponse.ok) {
-            setWorkLoaded(false);
-            console.error('There was a problem fetching the work data');
-            return;
-        } else {
-            const workFetched = await workResponse.json();
-            setWorkData(workFetched);
-            setWorkLoaded(true);    
+            const workResponse = await fetch(workRestPath);
+            if (!workResponse.ok) {
+                setWorkLoaded(false);
+                console.error('There was a problem fetching the work data');
+                return;
+            } else {
+                const workFetched = await workResponse.json();
+                setWorkData(workFetched);
+                setWorkLoaded(true);    
+            }
         }
-    }
-    fetchWorkData();
-    }
-    , [workRestPath]);
+        fetchWorkData();
+    }, [workRestPath]);
 
+    // Generate animation variants with custom delay for each card
+    const getItemVariants = (index) => ({
+        hidden: { opacity: 0, y: 20 },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                duration: 0.8,
+                ease: "easeOut",
+                delay: index * 0.2 // 0.2 second delay between each item
+            }
+        }
+    });
 
     return (
         <>
@@ -47,32 +59,39 @@ const WorkPage = () => {
                             </div>
                             <div className='hero-overlay'>
                                 <h1 className='step-6'>My Work</h1>
-                                
                             </div>
                         </section>
                         
-                         <section className='work-display'> 
+                        <section className='work-display'> 
                             <div className='work-grid'>
-                           {workData.map((project, i) => {
-                            // Check if the project should have the 'featured-project' class
-                            const projectClass = project["featured-work"][0] === 2 ? 'project-card featured-project' : 'project-card';
+                                {workData.map((project, i) => {
+                                    // Check if the project should have the 'featured-project' class
+                                    const projectClass = project["featured-work"][0] === 2 ? 'project-card featured-project' : 'project-card';
 
-                            return (
-                            <article className={projectClass} key={i}>
-                                <Link to={`/work/${project.slug}`} >
-                                {project.featured_images['medium_large'] && (
-                                <img 
-                                    src={project.featured_images['medium_large'].src}
-                                    srcSet={project.featured_images['medium_large'].srcSet}
-                                    sizes='(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw'
-                                    alt={project.featured_images['medium_large'].alt} 
-                                    className='featured-work-image'
-                                />)}
-                                <h2>{project.title.rendered}</h2>
-                                </Link>
-                            </article>
-                            );
-                            })}
+                                    return (
+                                        <motion.article 
+                                            className={projectClass} 
+                                            key={project.id || i}
+                                            initial="hidden"
+                                            whileInView="visible"
+                                            viewport={{ once: true, amount: 0.5 }}
+                                            variants={getItemVariants(i % 4)} // Reset stagger effect every 4 items
+                                        >
+                                            <Link to={`/work/${project.slug}`} >
+                                                {project.featured_images['medium_large'] && (
+                                                    <img 
+                                                        src={project.featured_images['medium_large'].src}
+                                                        srcSet={project.featured_images['medium_large'].srcSet}
+                                                        sizes='(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw'
+                                                        alt={project.featured_images['medium_large'].alt} 
+                                                        className='featured-work-image'
+                                                    />
+                                                )}
+                                                <h2>{project.title.rendered}</h2>
+                                            </Link>
+                                        </motion.article>
+                                    );
+                                })}
                             </div>
                         </section>
 
@@ -84,10 +103,9 @@ const WorkPage = () => {
                 </>
             ) : (
                 <Loading />
-            )        
-        }            
+            )}            
         </>
     );
-    };
+};
 
 export default WorkPage;

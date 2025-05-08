@@ -4,7 +4,6 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
 const FeaturedWork = ({featuredWorkData}) => {
-  // Use state to store the randomized data
   const [featuredItems, setFeaturedItems] = useState([]);
   
   // Randomize only once when the component mounts or when featuredWorkData changes
