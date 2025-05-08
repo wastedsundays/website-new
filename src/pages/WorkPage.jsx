@@ -68,7 +68,7 @@ const WorkPage = () => {
                                     alt={project.featured_images['medium_large'].alt} 
                                     className='featured-work-image'
                                 />)}
-                                <h3>{project.title.rendered}</h3>
+                                <h2>{project.title.rendered}</h2>
                                 </Link>
                             </article>
                             );
