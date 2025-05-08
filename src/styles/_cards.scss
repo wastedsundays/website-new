@@ -1,5 +1,5 @@
 @use 'mixins';
-.featured-work-container {
+.featured-work-container, .other-work-container {
 
     h2 {
         text-align: center;
@@ -17,9 +17,29 @@
     }
 }
 
-.featured-work-card, .project-card {
+.other-work-container {
+    background-color: var(--primary-color);
+    padding: 6rem 0;
+
+    h2 {
+        color: var(--text-on-primary);
+    }
+}
+
+.other-work-grid {
+    display: grid;
+    justify-items: center;
+    @media (min-width: 50rem) {
+        grid-template-columns: repeat(3, minmax(0, 450px));
+        margin-left: auto;
+        margin-right: auto;
+        width: fit-content;
+    }
+}
+
+.featured-work-card, .project-card, .other-project-card {
     @include mixins.depth-3;
-    max-width: 590px;
+    // max-width: 590px;
     margin: min(10vh, 1.25rem) 1rem;
     padding: .25rem;
     box-sizing: border-box;
@@ -38,10 +58,29 @@
     }
 }
 
+.featured-work-card, .project-card {
+    max-width: 36.875rem;
+}
+
+.other-project-card {
+    @include mixins.depth-3-noborder;
+    max-width: 28.125rem;
+    background-color: var(--background-surface);
+
+}
+
 .featured-work-card:hover, .project-card:hover {
     @include mixins.depth-8;
     background-color: var(--interaction-hover);
 
+    img {
+        filter: var(--image-brightness-hover);
+    }
+}
+
+.other-project-card:hover {
+    @include mixins.depth-12-noborder;
+    background-color: var(--background-surface);
     img {
         filter: var(--image-brightness-hover);
     }

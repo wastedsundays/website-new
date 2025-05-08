@@ -139,8 +139,6 @@ const SinglePage = () => {
 
             </motion.main>
         
-
-        
         ) : (
             <Loading />
         )
