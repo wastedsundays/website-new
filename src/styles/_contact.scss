@@ -57,3 +57,25 @@ input:focus, textarea:focus {
     color: var(--secondary-text);
     font-style: italic;
 }
+
+.contact-socials {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 4rem;
+
+    svg {
+        fill: var(--primary-text);
+        width: 4rem;
+        @include mixins.depth-3-noborder;
+        transition: fill .75s ease, box-shadow .75s ease;
+    }
+
+    svg:hover {
+        fill: var(--primary-color);
+        @include mixins.depth-6-noborder;
+        cursor: pointer;
+        transition: fill .75s ease, box-shadow .75s ease;
+
+    }
+}

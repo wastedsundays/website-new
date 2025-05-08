@@ -13,7 +13,8 @@ const ThemeToggle = () => {
     return (
         <button
             onClick={handleToggle}
-            className="theme-toggle"
+            className='theme-toggle'
+            aria-label='Toggle Theme'
         >
             {theme === 'dark' ? <IconSunshine /> : <IconMoonshine />}
 

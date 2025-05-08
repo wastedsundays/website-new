@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 const Logo = () => {
     return (
-		<Link to="/" >
+		<Link to="/" aria-label='Return to Home'>
 			<svg id="logo" version="1.1"  x="0px" y="0px" viewBox="0 0 288 288">
 			<g id="Layer_2">
 					<circle className="st0" cx="144" cy="144" r="130.1"/>

@@ -2,11 +2,12 @@ $theme-universal: (
     'primary-color': #0076B6,
     'primary-light': #33A6D9,
     'primary-dark': #005A88,
-    'text-on-primary': #e0e0e0,
+    'text-on-primary': #ffffff,
     'secondary-color': #FF9800,
     'secondary-light': #FFB74D,
     'secondary-dark': #F57C00,
-    'button-text': #FAFBFD
+    'button-text': #FAFBFD,
+    'secondary-button-text': #222222
     );
 
 $theme-light: (
@@ -22,7 +23,8 @@ $theme-light: (
     'image-brightness': 1,
     'image-contrast': 1,
     'image-saturate': 1,
-    'image-brightness-hover': 1
+    'image-brightness-hover': 1,
+    'text-on-primary': #ffffff
 );
 
 $theme-dark: (
@@ -38,5 +40,6 @@ $theme-dark: (
     'image-brightness': 0.85,
     'image-contrast': .95,
     'image-saturate': .9,
-    'image-brightness-hover': .95
+    'image-brightness-hover': .95,
+    'text-on-primary': #f5f5f5
     );

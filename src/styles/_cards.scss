@@ -86,6 +86,17 @@
     }
 }
 
+.filter-item {
+    width: 75px; 
+    height: 105px;
+
+    img {
+        margin: 5px;
+        @include mixins.depth-6-noborder;
+        border-radius: 5px;
+    }
+}
+
 
 
 
