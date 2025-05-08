@@ -93,6 +93,13 @@ nav.open {
         transition: fill .5s ease-in-out;
     }
 
+    svg:hover {
+        fill: var(--primary-light);
+    }
+    svg:active {
+        fill: var(--primary-dark);
+    }
+
     @media (min-width: 50rem) {
         position: fixed;
         right: 1rem;
