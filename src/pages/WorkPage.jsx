@@ -52,6 +52,7 @@ const WorkPage = () => {
                         </section>
                         
                          <section className='work-display'> 
+                            <div className='work-grid'>
                            {workData.map((project, i) => {
                             // Check if the project should have the 'featured-project' class
                             const projectClass = project["featured-work"][0] === 2 ? 'project-card featured-project' : 'project-card';
@@ -72,6 +73,7 @@ const WorkPage = () => {
                             </article>
                             );
                             })}
+                            </div>
                         </section>
 
                         <section className='contact-section'>
