@@ -1,15 +1,23 @@
 @use 'mixins';
 
-.submit-button, .secondary-button {
+.submit-button, .secondary-button, .primary-button {
     display: block;
     padding: .625rem;
-    background-color: var(--secondary-color);
-    color: var(--secondary-button-text);
-    font-size: var(--step--1);
+    font-size: var(--step-0);
     text-align: center;
     text-decoration: none;
     @include mixins.depth-3-noborder;
 
+}
+
+.submit-button, .secondary-button {
+    background-color: var(--secondary-color);
+    color: var(--secondary-button-text);
+}
+
+.primary-button {
+    background-color: var(--primary-color);
+    color: var(--text-on-primary);
 }
 
 .submit-button {
@@ -24,7 +32,7 @@
     }
 }
 
-.secondary-button {
+.secondary-button, .primary-button {
     width: 300px;
     margin-left: auto;
     margin-right: auto;
@@ -36,6 +44,25 @@
 
 }
 
+.primary-button:hover {
+    @include mixins.depth-6-noborder;
+    background-color: var(--primary-light);
+}
+
 .all-work-button {
     margin-top: min(10vh, 1.25rem);
+}
+
+.project-links {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    width: 100%;
+    max-width: 800px;
+    margin: 4rem auto 0 auto;
+    flex-wrap: wrap;
+
+    @media (min-width: 56.25rem) {
+        gap: 1rem;
+    }
 }

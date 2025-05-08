@@ -90,18 +90,19 @@ const SinglePage = () => {
                             </div>
 
                             <div dangerouslySetInnerHTML={{__html:projectData[0].content.rendered}}></div>
-                        
-                            {projectData[0].acf.live_project_site && 
-                                        (<a href={projectData[0].acf.live_project_site} target='_blank' rel='noreferrer'>
-                                            See It
-                                        </a>)
-                                        }
+                            <div className='project-links'>
+                                {projectData[0].acf.live_project_site && 
+                                            (<a href={projectData[0].acf.live_project_site} target='_blank' rel='noreferrer' className='primary-button'>
+                                                See It
+                                            </a>)
+                                            }
 
-                            {projectData[0].acf.project_repo &&
-                                (<a href={projectData[0].acf.project_repo} target='_blank' rel='noreferrer'>
-                                    GitHub
-                                    </a>)
-                            }
+                                {projectData[0].acf.project_repo &&
+                                    (<a href={projectData[0].acf.project_repo} target='_blank' rel='noreferrer' className='primary-button'>
+                                        GitHub
+                                        </a>)
+                                }
+                            </div>
                         </section>
 
                         <section className='project-tools-container'>

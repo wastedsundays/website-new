@@ -55,7 +55,7 @@ const OtherWork = ({ id }) => {
             {isOtherLoaded && randomWork.length > 0 ? (
 
                 <div className='other-work-container'>
-                    <h2>Other Work</h2>
+                    <h2 className='step-4'>Other Work</h2>
                     <div className='other-work-grid'>
                         {randomWork.map((project, i) => (
                             <div className='other-project-card' key={i}>
