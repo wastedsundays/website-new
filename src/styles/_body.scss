@@ -23,3 +23,7 @@ body {
     transition: background-color 1s ease, color 1s ease;
     box-sizing: border-box;
 }
+
+img {
+    @include mixins.image-adjustments;
+}
