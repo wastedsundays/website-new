@@ -86,19 +86,19 @@ const ContactForm = () => {
                         <input type='text' id='website' name='website' autoComplete='off' tabIndex='-1' onChange={handleChange} />
                     </div>
                     <div>
-                        <label className='step--1' htmlFor='user_name'>Name</label>
+                        <label className='step--1' htmlFor='user_name'>Name *</label>
                         <input type='text' id='user_name' name='user_name' aria-required='true' required onChange={handleChange}/>
                     </div>
                     <div>
-                        <label className='step--1' htmlFor='user_email'>Email</label>
+                        <label className='step--1' htmlFor='user_email'>Email *</label>
                         <input type='email' id='user_email' name='user_email' aria-required='true' required onChange={handleChange}/>
                     </div>
                     <div>
-                        <label className='step--1' htmlFor='message'>Message</label>
+                        <label className='step--1' htmlFor='message'>Message *</label>
                         <textarea id='message' name='message' aria-required='true' required onChange={handleChange}></textarea>
                     </div>
 
-                    <button type='submit' value='Send'>Send</button>
+                    <button className='secondary-button' type='submit' value='Send'>Send</button>
 
                 </form>
                 </>
