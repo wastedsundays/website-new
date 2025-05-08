@@ -21,7 +21,8 @@ $theme-light: (
     'interaction-hover': #ffffff,
     'image-brightness': 1,
     'image-contrast': 1,
-    'image-saturate': 1
+    'image-saturate': 1,
+    'image-brightness-hover': 1
 );
 
 $theme-dark: (
@@ -36,5 +37,6 @@ $theme-dark: (
     'interaction-hover': rgba(200, 200, 200, .2),
     'image-brightness': 0.85,
     'image-contrast': .95,
-    'image-saturate': .9
-);
+    'image-saturate': .9,
+    'image-brightness-hover': .95
+    );
