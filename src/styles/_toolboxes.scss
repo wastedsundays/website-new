@@ -1,0 +1,35 @@
+@use 'mixins';
+
+.project-tools-container {
+    width: clamp(300px, 94%, 800px);
+    margin: 0 auto 8rem;
+
+
+    @include mixins.depth-3;
+    max-width: 800px;
+    padding: 2rem 2rem 4rem;
+    text-align: center;
+
+
+    h2 {
+        margin-bottom: 0;
+        margin-top: 1rem;
+    }
+
+    p {
+        color: var(--secondary-text);
+        margin-top: 0;
+        margin-bottom: 2rem;
+    }
+
+    .project-tools {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 2rem;
+
+        img {
+            @include mixins.depth-3-noborder;
+        }
+    }
+}
