@@ -20,24 +20,26 @@ const FeaturedWork = ({featuredWorkData}) => {
 
     return (
         <>
-            <div className='featured-work-container project-display-container'>
+            <div className='featured-work-container'>
                 <h2 className='step-5'>Featured Work</h2>
-                {featuredItems.map((project, i) => (
-                    <article key={i} className = 'featured-work-card'>
-                        <Link to={`/work/${project.slug}`} className=''>
-                        <img 
-                            src={project.featured_images['medium_large'].src}
-                            srcSet={project.featured_images['medium_large'].srcSet}
-                            sizes='(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw'
-                            alt={project.featured_images['medium_large'].alt} 
-                            className='featured-work-image'
-                        />
-                                            
-                        <h3 className='project-card-title'>{project.title.rendered}</h3>
-                        </Link>
-                    </article>
+                <div className='featured-work-grid'>
+                    {featuredItems.map((project, i) => (
+                        <article key={i} className = 'featured-work-card'>
+                            <Link to={`/work/${project.slug}`} className=''>
+                            <img 
+                                src={project.featured_images['medium_large'].src}
+                                srcSet={project.featured_images['medium_large'].srcSet}
+                                sizes='(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw'
+                                alt={project.featured_images['medium_large'].alt} 
+                                className='featured-work-image'
+                            />
+                                                
+                            <h3 className='project-card-title'>{project.title.rendered}</h3>
+                            </Link>
+                        </article>
 
-                ))}
+                    ))}
+                </div>
             </div>
 
             <div className='all-work-button'>
