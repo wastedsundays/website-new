@@ -12,6 +12,7 @@ import ErrorPage from './pages/ErrorPage';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
+import SinglePageWrapper from './components/SinglePageWrapper';
 
 
 function App() {
@@ -29,7 +30,7 @@ function App() {
           <Route path='/' element={<HomePage />} />
           <Route path='/about' element={<AboutPage />} />
           <Route path='/work' element={<WorkPage />} />
-          <Route path='/work/:slug' element={<SinglePage />} />
+          <Route path='/work/:slug' element={<SinglePageWrapper />} />
           <Route path='/contact' element={<ContactPage />} />
           <Route path='*' element={<ErrorPage />} />
         </Routes>
