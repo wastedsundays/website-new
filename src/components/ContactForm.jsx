@@ -98,7 +98,7 @@ const ContactForm = () => {
                         <textarea id='message' name='message' aria-required='true' required onChange={handleChange}></textarea>
                     </div>
 
-                    <button className='secondary-button' type='submit' value='Send'>Send</button>
+                    <button className='submit-button' type='submit' value='Send'>Send</button>
 
                 </form>
                 </>
