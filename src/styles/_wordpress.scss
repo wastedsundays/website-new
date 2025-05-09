@@ -22,3 +22,11 @@
         margin-bottom: min(10vh, 10rem);
     }
 }
+
+.column-reverse {
+    flex-direction: column-reverse;
+
+    @media (min-width: 49.0625rem) {
+        flex-direction: row;
+    }
+}

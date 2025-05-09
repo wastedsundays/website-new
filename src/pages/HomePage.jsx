@@ -59,14 +59,16 @@ const HomePage = () => {
                         <p>Front End Developer</p>
                     </div>
                 </section>
+
+                <section className='wp-home-section'>
+                    <div dangerouslySetInnerHTML={{ __html: homeData.content.rendered }}></div>
+                </section>
                 
                 <section className='featured-work-section'>
                     <FeaturedWork featuredWorkData={featuredWorkData} />
                 </section>
 
-                <section className='wp-content-section'>
-                    <div dangerouslySetInnerHTML={{ __html: homeData.content.rendered }}></div>
-                </section>
+
 
                 <section className='contact-section'>
                     <ContactForm />

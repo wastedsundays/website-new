@@ -1,23 +1,36 @@
 @use 'mixins';
 
-.toolbox-section, .intro-section, .about-details-section {
+.toolbox-section, .intro-section, .about-details-section, .wp-home-section {
     width: 95%;
-    margin: 0 auto 4rem;
+    
 }
 
 .intro-section {
     max-width: 65rem;
+    margin: 0 auto 4rem;
 
 }
 
 .toolbox-section {
     max-width: 56.25rem;
+    margin: 0 auto min(20vh, 17rem);
    
 }
 
 .about-details-section {
     max-width: 85rem;
+    margin: 0 auto 4rem;
     h2, .wordpress-p {
         padding: 0 10vw;
     }
+
+    .wordpress-p {
+        margin-bottom: min(7vh, 7rem);
+    }
+}
+
+.wp-home-section {
+    max-width: 65rem;
+    margin: 0 auto min(15vh, 15rem);
+
 }
