@@ -49,15 +49,20 @@ const AboutPage = () => {
                             <h1 className='step-6'>About Adam</h1>
                         </div>
                     </section>
-
-                    <section className='details-section'>
-                        <h2>{aboutRestData.title.rendered}</h2>
-                        <div dangerouslySetInnerHTML={{ __html: aboutRestData.content.rendered }} />
-                    </section>
-                    
+                    <section className='intro-section'>
+                        <h2 className='step-5'>Making Things</h2>
+                        <p>{aboutRestData.acf.about_preamble}</p>
+                    </section>    
                     <section className='toolbox-section'>
                         <Toolbox /> 
                     </section>
+
+                    <section className='about-details-section'>
+                        <h2 className='step-4'>What Else?</h2>
+                        <div dangerouslySetInnerHTML={{ __html: aboutRestData.content.rendered }} />
+                    </section>
+                    
+
                     
                     <section className='contact-section'>
                         <ContactForm />
