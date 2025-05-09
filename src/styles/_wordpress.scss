@@ -1,0 +1,24 @@
+@use 'mixins';
+
+.wp-block-columns.is-layout-flex  {
+
+    gap: 5%;
+    padding: 1rem;
+    max-width: 1500px;
+    margin: 0 auto;
+    align-items: center;
+
+    img {
+        padding: .5rem;
+        background-color: var(--background-surface);
+        @include mixins.depth-3-noborder;
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+.about-details-section {
+    .wp-block-group {
+        margin-bottom: min(10vh, 10rem);
+    }
+}

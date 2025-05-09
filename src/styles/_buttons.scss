@@ -66,3 +66,29 @@
         gap: 1rem;
     }
 }
+
+.selector-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: .25rem;
+    padding: 1rem;
+
+    button {
+        padding: .625rem;
+        width: clamp(5.625rem, 20%, 7rem);
+        @include mixins.depth-6-noborder;
+        background-color: var(--secondary-text);
+        color: var(--background-color);
+    }
+
+    button:hover {
+        background-color: var(--primary-light);
+    }
+
+    .button-checked  {
+        background-color: var(--primary-color);
+        color: var(--text-on-primary);
+        @include mixins.depth-3-noborder;
+    }
+}

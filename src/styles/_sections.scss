@@ -1,0 +1,23 @@
+@use 'mixins';
+
+.toolbox-section, .intro-section, .about-details-section {
+    width: 95%;
+    margin: 0 auto 4rem;
+}
+
+.intro-section {
+    max-width: 65rem;
+
+}
+
+.toolbox-section {
+    max-width: 56.25rem;
+   
+}
+
+.about-details-section {
+    max-width: 85rem;
+    h2, .wordpress-p {
+        padding: 0 10vw;
+    }
+}
