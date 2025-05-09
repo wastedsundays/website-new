@@ -27,6 +27,10 @@
 
 .contact-heading {
     text-align: center;
+    
+    @media (min-width: 56.25rem) {
+        margin-top: 0;
+    }
 }
 
 .contact-text-container p {}
