@@ -30,3 +30,43 @@
         flex-direction: row;
     }
 }
+
+.project-api-content {
+    .wp-block-group {
+        width: 95%;
+        max-width: 62.5rem;
+        margin: 0 auto;
+    }
+}
+
+figure.wp-block-gallery.has-nested-images, .wp-block-media-text {
+    display: flex;
+    justify-content: center;
+
+    gap: 1rem;
+    margin: 3rem auto;
+    max-width: 80.5rem;
+    width: 95%;
+    // padding: 1rem;
+
+
+    img {
+        padding: .5rem;
+        background-color: var(--background-surface);
+        @include mixins.depth-3-noborder;
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+.wp-block-image {
+    img {
+        padding: .5rem;
+        background-color: var(--background-surface);
+        @include mixins.depth-3-noborder;
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+

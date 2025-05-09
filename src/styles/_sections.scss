@@ -29,8 +29,9 @@
     }
 }
 
-.wp-home-section {
+.wp-home-section, .project-meta {
     max-width: 65rem;
     margin: 0 auto min(15vh, 15rem);
+    padding: 0 2.5%;
 
 }

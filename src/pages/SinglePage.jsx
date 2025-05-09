@@ -84,13 +84,15 @@ const SinglePage = () => {
 
                         <section className='project-details-section'>
                             <div className='project-details'>
-                                <h2>Details</h2>
+                                <div className='project-meta'>
+                                    <h2 className='step-4'>Details</h2>
 
-                                <div className='project-description'>
-                                    <p>{projectData[0].acf.project_description}</p>
+                                    <div className='project-description'>
+                                        <p>{projectData[0].acf.project_description}</p>
+                                    </div>
                                 </div>
 
-                                <div className='api-content' dangerouslySetInnerHTML={{__html:projectData[0].content.rendered}}></div>
+                                <div className='project-api-content' dangerouslySetInnerHTML={{__html:projectData[0].content.rendered}}></div>
                                 <div className='project-links'>
                                     {projectData[0].acf.live_project_site && 
                                         (<a href={projectData[0].acf.live_project_site} target='_blank' rel='noreferrer' className='primary-button' aria-label='View Live Project Site'>
