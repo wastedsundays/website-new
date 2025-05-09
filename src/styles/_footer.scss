@@ -7,6 +7,13 @@ footer {
 
     color: var(--text-on-primary);
     padding: .5rem 1rem;
+
+    span {
+        font-family: 'Edo', sans-serif;
+        font-size: var(--step-3);
+        position: relative;
+        top: 2px;
+    }
 }
 
 .footer-icons {
