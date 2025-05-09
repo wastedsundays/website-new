@@ -70,6 +70,8 @@ const Toolbox = () => {
         <div>
             {toolsLoaded ? (
                 <div>
+                    <h2>What I work with</h2>
+                    <p className='step--1'>These are the tools I use to create my work. I'm always adding new ones.</p>
                     <div className="selector-buttons">
                         <button className='button-checked' id="*" onClick={handleFilterKeyChange('*')}>All</button>
                         <button className='' id="Favourite" onClick={handleFilterKeyChange('Favourite')}>Favourites</button>
