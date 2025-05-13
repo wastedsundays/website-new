@@ -1,5 +1,6 @@
 // eslint-disable-next-line
 import { motion } from 'framer-motion';
+import errorImageWhite from '../images/error-image-white.jpg'
 
 const ErrorPage = () => {
     return (
@@ -10,7 +11,7 @@ const ErrorPage = () => {
             transition={{ duration: 1.5 }}>
             <div>
                 <h1>Error Page</h1>
-                <p>This page is the 404 error page</p>
+                <img src={errorImageWhite} alt="Error" />
             </div>
         </motion.div>
     );
