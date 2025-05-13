@@ -4,7 +4,8 @@ import { REST_PATH } from '../globals/globals';
 
 const OtherWork = ({ id }) => {
 
-    const otherWorkRestPath = `${ REST_PATH }ahdesigns-work?acf_format=standard&featured-work=2`;
+    // const otherWorkRestPath = `${ REST_PATH }ahdesigns-work?acf_format=standard&featured-work=2`;
+    const otherWorkRestPath = `${ REST_PATH }ahdesigns-work?acf_format=standard`;
     const [otherWorkData, setOtherWorkData] = useState([]);
     const [isOtherLoaded, setIsOtherLoaded] = useState(false);
     const [randomWork, setRandomWork] = useState([]);

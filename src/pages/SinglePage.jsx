@@ -86,10 +86,11 @@ const SinglePage = () => {
                             <div className='project-details'>
                                 <div className='project-meta'>
                                     <h2 className='step-4'>Details</h2>
-
+                                    {projectData[0].acf.project_description && (
                                     <div className='project-description'>
                                         <p>{projectData[0].acf.project_description}</p>
                                     </div>
+                                    )}
                                 </div>
 
                                 <div className='project-api-content' dangerouslySetInnerHTML={{__html:projectData[0].content.rendered}}></div>
@@ -130,7 +131,7 @@ const SinglePage = () => {
 
                         </section>
                         <div>
-                            <OtherWork id={[projectData[0].id]} />
+                            <OtherWork id={projectData[0].id} />
                         </div>
                         <section className='contact-section'>
                             <ContactForm />
