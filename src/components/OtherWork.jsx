@@ -73,6 +73,9 @@ const OtherWork = ({ id }) => {
                             </div>
                         ))}
                     </div>
+                    <div className='all-work-button'>
+                        <Link to='/work' className='secondary-button'>View All Work</Link>
+                    </div>
                 </div>
             ) : isOtherLoaded && randomWork.length === 0 ? (
                 <></>
