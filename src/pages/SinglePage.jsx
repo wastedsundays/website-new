@@ -83,7 +83,6 @@ const SinglePage = () => {
                         </section>
 
                         <section className='project-details-section'>
-                            <div className='project-details'>
                                 <div className='project-overview'>
                                     <h2 className='step-4'>Overview</h2>
                                     {projectData[0].acf.project_description && (
@@ -106,7 +105,6 @@ const SinglePage = () => {
                                         </a>)
                                     }
                                 </div>
-                            </div>
                         </section>
 
                         <section className='project-tools-container'>
