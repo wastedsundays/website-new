@@ -28,6 +28,4 @@ img {
     @include mixins.image-adjustments;
 }
 
-section {
-    margin-bottom: min(20vh, 10rem);
-}
+

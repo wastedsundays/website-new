@@ -1,0 +1,94 @@
+@use 'mixins';
+
+/* Main timeline container */
+.wp-block-atlb-timeline-block {
+  position: relative;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+/* Timeline vertical bar */
+.timeline__bar {
+  position: absolute;
+  width: 4px;
+  background-color: #e0e0e0;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+/* Single timeline item container */
+.wp-block-atlb-single-timeline-item {
+  position: relative;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  min-height: 80px;
+}
+
+/* Timeline marker (circle with icon) */
+.timeline__marker {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #fff;
+  border: 4px solid #007bff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.timeline__marker i {
+  color: #007bff;
+  font-size: 14px;
+}
+
+/* Content and date containers */
+.timeline__content {
+  width: 43%;
+  padding: 15px;
+  background-color: var(--background-surface);
+  border-radius: 5px;
+  @include mixins.depth-3;
+  z-index: 2;
+}
+
+.timeline__date {
+      width: 43%;
+  padding: 15px;
+  border-radius: 5px;
+
+  z-index: 2;
+}
+
+/* Alternating content and date placement */
+// .wp-block-atlb-single-timeline-item:nth-child(odd) .timeline__content {
+//   margin-right: 7%;
+// }
+
+// .wp-block-atlb-single-timeline-item:nth-child(odd) .timeline__date {
+//   margin-left: 7%;
+// }
+
+// .wp-block-atlb-single-timeline-item:nth-child(even) .timeline__content {
+//   order: 3;
+//   margin-left: 7%;
+// }
+
+// .wp-block-atlb-single-timeline-item:nth-child(even) .timeline__date {
+//   order: 1;
+//   margin-right: 7%;
+// }
+
+// .wp-block-atlb-single-timeline-item:nth-child(even) .timeline__marker {
+//   order: 2;
+// }

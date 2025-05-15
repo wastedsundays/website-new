@@ -39,10 +39,13 @@ h1, h2 {
 }
 
 .wp-block-group {
+  // h2 {
+  //   font-size: var(--step-3);
+  // }
   h3 {
     font-family: "Edo", sans-serif;
     font-weight: 100;
-    font-size: var(--step-3);
+    font-size: var(--step-2);
     margin-top: 0;
   }
 }

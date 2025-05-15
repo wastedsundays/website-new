@@ -1,37 +1,62 @@
 @use 'mixins';
+@use 'variables';
 
-.toolbox-section, .intro-section, .about-details-section, .wp-home-section {
-    width: 95%;
-    
-}
-
-.intro-section {
-    max-width: 65rem;
-    margin: 0 auto 4rem;
-
+section {
+    margin-bottom: variables.$min-vh-rem;
 }
 
 .toolbox-section {
-    max-width: 56.25rem;
-    margin: 0 auto min(20vh, 17rem);
+    h3, p {
+        width: 85%;
+        max-width: 55rem;
+        margin-left: auto;
+        margin-right: auto;
+
+    }
+
+    .filter-container, hr {
+        width: 90%;
+        max-width: 65rem;
+        margin-left: auto;
+        margin-right: auto;
+
+    }
+}
+
+
+
+// .toolbox-section, .intro-section, .about-details-section, .wp-home-section {
+//     width: 95%;
+    
+// }
+
+// .intro-section {
+//     max-width: 65rem;
+//     margin: 0 auto 4rem;
+
+// }
+
+// .toolbox-section {
+//     max-width: 56.25rem;
+//     margin: 0 auto min(20vh, 17rem);
    
-}
+// }
 
-.about-details-section {
-    max-width: 85rem;
-    margin: 0 auto 4rem;
-    h2, .wordpress-p {
-        padding: 0 10vw;
-    }
+// .about-details-section {
+//     max-width: 85rem;
+//     margin: 0 auto 4rem;
+//     h2, .wordpress-p {
+//         padding: 0 10vw;
+//     }
 
-    .wordpress-p {
-        margin-bottom: min(7vh, 7rem);
-    }
-}
+//     .wordpress-p {
+//         margin-bottom: min(7vh, 7rem);
+//     }
+// }
 
-.wp-home-section, .project-meta {
-    max-width: 65rem;
-    margin: 0 auto min(15vh, 15rem);
-    padding: 0 2.5%;
+// .wp-home-section  {
+//     max-width: 65rem;
+//     margin: 0 auto min(15vh, 15rem);
+//     padding: 0 2.5%;
 
-}
+// }
