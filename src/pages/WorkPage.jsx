@@ -63,6 +63,12 @@ const WorkPage = () => {
                         </section>
                         
                         <section className='work-display'> 
+                            <div className='work-intro'>
+                                <p>Welcome to where the magic happens! As a front-end developer with a designer's eye and a data wizard's mind, I craft experiences that are as functional as they are beautiful.</p>
+                                <p>Each project here represents a unique challenge—whether it's building lightning-fast interfaces, wrangling complex databases, or creating visual designs that tell a story. Dive in, click around, and see how I transform ideas into digital reality.</p>
+                                <p>When I'm not nerding out over clean code or pixel-perfect designs, I'm probably tinkering with new tech or finding creative ways to visualize data. Every project is a puzzle, and I've never met one I didn't want to solve.</p>
+                                <p>Go ahead—explore my digital handiwork and see what happens when technical skills meet creative thinking.</p>
+                            </div>
                             <div className='work-grid'>
                                 {workData.map((project, i) => {
                                     // Check if the project should have the 'featured-project' class
