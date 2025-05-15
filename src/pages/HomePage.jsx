@@ -61,7 +61,7 @@ const HomePage = () => {
                 </section>
 
                 <section className='wp-home-section'>
-                    <div dangerouslySetInnerHTML={{ __html: homeData.content.rendered }}></div>
+                    <div className='wp-api-content'dangerouslySetInnerHTML={{ __html: homeData.content.rendered }}></div>
                 </section>
                 
                 <section className='featured-work-section'>
