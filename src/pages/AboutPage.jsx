@@ -58,7 +58,6 @@ const AboutPage = () => {
                     </section>
 
                     <section className='about-details-section'>
-                        <h2 className='step-4'>What Else?</h2>
                         <div dangerouslySetInnerHTML={{ __html: aboutRestData.content.rendered }} />
                     </section>
                     
