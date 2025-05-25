@@ -21,7 +21,7 @@
 
 .development-process {
     .wp-block-group {
-        @include mixins.depth-3;
+        // @include mixins.depth-3;
         padding: 2rem;
         margin: 4rem auto;
     }
@@ -85,11 +85,30 @@
 .column-reverse {
     flex-direction: column-reverse;
 
-    @media (min-width: 49.0625rem) {
-        flex-direction: row;
-    }
 }
 
+.about-details-section {
+    width: 90%;
+    max-width: 80rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (min-width: 48.875rem) {
+
+    .column-reverse {
+        flex-direction: row;
+
+    }
+    .about-details-section .wp-block-image img {
+        min-height: 30.375rem;
+    }
+}
+// @media (min-width: 48.875rem) {
+//     .about-details-section .wp-block-image img {
+//         min-height: 34.375rem;
+//     }
+// }
 
 
 h2.wp-block-heading {

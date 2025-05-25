@@ -6,18 +6,23 @@
   max-width: 100%;
   margin: 0 auto;
   padding: 20px 0;
+  font-size: var(--step--1);
 }
 
 /* Timeline vertical bar */
 .timeline__bar {
   position: absolute;
   width: 4px;
-  background-color: #e0e0e0;
+  background-color: var(--primary-color);
   top: 0;
   bottom: 0;
-  left: 50%;
+  left: 70%;
   transform: translateX(-50%);
   z-index: 1;
+
+  @media (min-width: 43.75rem) {
+    left: 50%;
+  }
 }
 
 /* Single timeline item container */
@@ -29,6 +34,16 @@
   align-items: center;
   justify-content: center;
   min-height: 80px;
+  gap: 3rem;
+}
+
+@media (min-width: 43.75rem) {
+.wp-block-atlb-single-timeline-item:nth-child(odd) {
+  flex-direction: row-reverse;
+    .timeline__date {
+        text-align: right;
+    }
+}
 }
 
 /* Timeline marker (circle with icon) */
@@ -43,8 +58,12 @@
   justify-content: center;
   z-index: 2;
   position: absolute;
-  left: 50%;
+  left: 70%;
   transform: translateX(-50%);
+
+  @media (min-width: 43.75rem) {
+    left: 50%;
+  }
 }
 
 .timeline__marker i {
@@ -54,12 +73,16 @@
 
 /* Content and date containers */
 .timeline__content {
-  width: 43%;
+  width: 100%;
   padding: 15px;
   background-color: var(--background-surface);
   border-radius: 5px;
   @include mixins.depth-3;
   z-index: 2;
+
+  @media (min-width: 43.75rem) {
+    width: 42%;
+  }
 }
 
 .timeline__date {
@@ -70,25 +93,12 @@
   z-index: 2;
 }
 
-/* Alternating content and date placement */
-// .wp-block-atlb-single-timeline-item:nth-child(odd) .timeline__content {
-//   margin-right: 7%;
-// }
 
-// .wp-block-atlb-single-timeline-item:nth-child(odd) .timeline__date {
-//   margin-left: 7%;
-// }
 
-// .wp-block-atlb-single-timeline-item:nth-child(even) .timeline__content {
-//   order: 3;
-//   margin-left: 7%;
-// }
+.highlight {
+    color: red;
+}
 
-// .wp-block-atlb-single-timeline-item:nth-child(even) .timeline__date {
-//   order: 1;
-//   margin-right: 7%;
-// }
-
-// .wp-block-atlb-single-timeline-item:nth-child(even) .timeline__marker {
-//   order: 2;
-// }
+.dim {
+  filter: brightness(.75);
+}

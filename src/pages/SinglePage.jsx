@@ -10,6 +10,7 @@ import ErrorPage from "./ErrorPage";
 import ContactForm from "../components/ContactForm";
 
 
+
 const SinglePage = () => {
 
     const { slug } = useParams();
