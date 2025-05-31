@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { ThemeProvider } from './context/ThemeContext';
 import { EmailProvider } from './context/EmailContext';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 import HomePage from './pages/HomePage';
 import WorkPage from './pages/WorkPage';
@@ -20,25 +21,27 @@ function App() {
 
   return (
     <>
-    <ThemeProvider>
-    <EmailProvider>
-      <Router>
-        <ScrollToTop />
-        <Header />
+    <HelmetProvider>
+      <ThemeProvider>
+        <EmailProvider>
+          <Router>
+            <ScrollToTop />
+            <Header />
 
-        <Routes>
-          <Route path='/' element={<HomePage />} />
-          <Route path='/about' element={<AboutPage />} />
-          <Route path='/work' element={<WorkPage />} />
-          <Route path='/work/:slug' element={<SinglePageWrapper />} />
-          <Route path='/contact' element={<ContactPage />} />
-          <Route path='*' element={<ErrorPage />} />
-        </Routes>
-        <Footer />
-      </Router>
+            <Routes>
+              <Route path='/' element={<HomePage />} />
+              <Route path='/about' element={<AboutPage />} />
+              <Route path='/work' element={<WorkPage />} />
+              <Route path='/work/:slug' element={<SinglePageWrapper />} />
+              <Route path='/contact' element={<ContactPage />} />
+              <Route path='*' element={<ErrorPage />} />
+            </Routes>
+            <Footer />
+          </Router>
 
-    </EmailProvider>
-    </ThemeProvider>
+        </EmailProvider>
+      </ThemeProvider>
+    </HelmetProvider>
     </>
   )
 }
