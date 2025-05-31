@@ -34,6 +34,11 @@ const AboutPage = () => {
 
     return (
         <>
+            <title>About Me | Adam H</title>
+            <meta name="description" content="Learn some other things about Adam, an experienced front-end developer, WordPress developer, and designer creating modern, responsive web applications with React, JavaScript, PHP, and intuitive UI/UX design. Specializing in custom WordPress themes and React development." />
+            <meta name="keywords" content="front end developer, WordPress developer, web designer, React developer, JavaScript, PHP, WordPress themes, WordPress blocks, UI/UX design, responsive design, web development, portfolio" />
+            <meta name="author" content="Adam H" />
+            <link rel="canonical" href="https://www.adamh.ca/about" />
         {aboutLoaded ? (
             <motion.main className='about-page'
                 initial={{ opacity: 0 }}
