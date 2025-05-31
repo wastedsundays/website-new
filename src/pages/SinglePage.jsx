@@ -66,12 +66,6 @@ const SinglePage = () => {
             exit={{ opacity: 0 }}
             transition={{ duration: 1.5 }}
             >
-                <title>{`${projectData[0].title.rendered} - an Adam H creation.`}</title>
-                <meta name='description' content={projectData[0].acf.project_meta} />
-                <meta name='keywords' content={projectData[0].acf.work_tools.map(tool => tool.post_title).join(', ')} />
-                <meta name='author' content='Adam H' />
-                <link rel='canonical' href={`https://www.adamh.ca/work/${projectData[0].slug}`} />
-
 
                 {projectData && projectData.length > 0 ? (
                     <>

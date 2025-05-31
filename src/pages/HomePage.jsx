@@ -43,11 +43,6 @@ const HomePage = () => {
 
     return (
         <>
-            <title>Adam H - Front End Developer</title>
-            <meta name="description" content="Experienced front-end developer, WordPress developer, and designer creating modern, responsive web applications with React, JavaScript, PHP, and intuitive UI/UX design. Specializing in custom WordPress themes and React development. View my portfolio of projects and get in touch." />
-            <meta name="keywords" content="front end developer, WordPress developer, web designer, React developer, JavaScript, PHP, WordPress themes, WordPress blocks, UI/UX design, responsive design, web development, portfolio" />
-            <meta name="author" content="Adam H" />
-            <link rel="canonical" href="https://www.adamh.ca/" />
 
         {homeLoaded ? (            
             <motion.main
