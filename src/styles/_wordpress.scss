@@ -94,6 +94,10 @@
     margin-right: auto;
 }
 
+.about-details-section .wp-block-group {
+    margin-bottom: 5rem;
+}
+
 @media (min-width: 48.875rem) {
 
     .column-reverse {
@@ -104,11 +108,12 @@
         min-height: 30.375rem;
     }
 }
-// @media (min-width: 48.875rem) {
-//     .about-details-section .wp-block-image img {
-//         min-height: 34.375rem;
-//     }
-// }
+.about-details-section p, .about-details-section h3, 
+.project-api-content p, .project-api-content h3, 
+.project-api-content ul {
+    padding-left: clamp(1rem, 5%, 4rem);
+    padding-right: clamp(1rem, 5%, 4rem);
+}
 
 
 h2.wp-block-heading {
@@ -129,5 +134,27 @@ h2.wp-block-heading {
 }
 
 
+.wp-block-list {
+    list-style: none;
+    padding-left: 0;
 
+}
+
+.wp-block-list li {
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.wp-block-list li::before {
+    content: '-';
+    position: absolute;
+    left: 0.25rem;
+    top: -0.375rem;
+    font-family: 'Edo', sans-serif;
+    font-weight: 400;
+    font-size: var(--step-2);
+    width: 0.5rem;
+    height: 0.5rem;
+
+}
 

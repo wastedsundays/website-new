@@ -91,27 +91,30 @@ const SinglePage = () => {
                                         
                                     )}
                                 </div>
+                                {(projectData[0].acf.live_project_site || projectData[0].acf.project_repo) && (
+                                    <div className='project-links'>
+                                        {projectData[0].acf.live_project_site && 
+                                            (<a href={projectData[0].acf.live_project_site} target='_blank' rel='noreferrer' className='primary-button' aria-label='View Live Project Site'>
+                                                See It
+                                            </a>)
+                                        }
+
+                                        {projectData[0].acf.project_repo &&
+                                            (<a href={projectData[0].acf.project_repo} target='_blank' rel='noreferrer' className='primary-button' aria-label='View Project Repository'>
+                                                GitHub
+                                            </a>)
+                                        }
+                                    </div>
+                                )}
 
                                 <div className='project-api-content' dangerouslySetInnerHTML={{__html:projectData[0].content.rendered}}></div>
-                                <div className='project-links'>
-                                    {projectData[0].acf.live_project_site && 
-                                        (<a href={projectData[0].acf.live_project_site} target='_blank' rel='noreferrer' className='primary-button' aria-label='View Live Project Site'>
-                                            See It
-                                        </a>)
-                                    }
 
-                                    {projectData[0].acf.project_repo &&
-                                        (<a href={projectData[0].acf.project_repo} target='_blank' rel='noreferrer' className='primary-button' aria-label='View Project Repository'>
-                                            GitHub
-                                        </a>)
-                                    }
-                                </div>
                         </section>
 
                         <section className='project-tools-container'>
                             {projectData[0].acf.work_tools && projectData[0].acf.work_tools.length > 0 && (
                             <div>
-                                <h2 className='step-4' style={{color: projectData[0].acf.project_primary_color}}>Toolbox</h2>
+                                <h2 className='step-4'>Toolbox</h2>
                                 <p className='step--1'>How it was made</p>
                                 
                                 <div className='project-tools'>                              
