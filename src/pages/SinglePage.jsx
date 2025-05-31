@@ -54,8 +54,10 @@ const SinglePage = () => {
     }
 
 
+
     return (
         <>
+
         { loaded ? (
             <motion.main
             initial={{ opacity: 0 }}
@@ -65,6 +67,7 @@ const SinglePage = () => {
             >
                 {projectData && projectData.length > 0 ? (
                     <>
+
                         <section className='hero-section'>
                             <div className='hero-image'>
                                 {projectData[0].featured_images['2048x2048'] && (

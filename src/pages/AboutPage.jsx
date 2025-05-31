@@ -39,8 +39,7 @@ const AboutPage = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                transition={{ duration: 1.5 }}>
-
+                transition={{ duration: 1.5 }}>                    
                     <section className='hero-section'>
                         <div className='hero-image'>
                             <img src={heroImageAbout} alt="Hero" />
