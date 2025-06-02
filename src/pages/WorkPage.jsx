@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { REST_PATH } from '../globals/globals';
+import useSEO from '../hooks/useSEO';
 import Loading from '../components/Loading';
 import ContactForm from '../components/ContactForm';
 import heroImageWork from '../images/210-2000x1000.jpg';
@@ -12,6 +13,11 @@ const WorkPage = () => {
 
     const [workData, setWorkData] = useState([]);
     const [workLoaded, setWorkLoaded] = useState(false);
+
+    useSEO({
+        title: "My Work",
+        description: "Adam H - Front End Developer specializing in modern web development"
+    });
 
     useEffect(() => {
         const fetchWorkData = async () => {

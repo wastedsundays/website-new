@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 // eslint-disable-next-line
 import { AnimatePresence, motion } from 'framer-motion';
 import { REST_PATH } from '../globals/globals';
+import useSEO from '../hooks/useSEO';
 
 import OtherWork from "../components/OtherWork";
 import Loading from "../components/Loading";
@@ -20,6 +21,20 @@ const SinglePage = () => {
 
     const projectRestPath = `${REST_PATH}ahdesigns-work?acf_format=standard&slug=${slug}&embed`;
     const projectToolsPath = `${REST_PATH}ahdesigns-tools?acf_format=standard&per_page=100`;
+
+    useSEO({
+        title: projectData && projectData.length > 0 ? projectData[0].title.rendered : 'Project',
+        description: projectData && projectData.length > 0 && projectData[0].acf.project_description 
+            ? projectData[0].acf.project_description.replace(/<[^>]*>/g, '').substring(0, 160) // Strip HTML and limit length
+            : 'View this project by Adam H - Front End Developer',
+        keywords: projectData && projectData.length > 0 && projectData[0].acf.work_tools
+            ? `${projectData[0].title.rendered}, ${projectData[0].acf.work_tools.map(tool => tool.post_title).join(', ')}, portfolio, web development`
+            : 'portfolio, web development, project',
+        image: projectData && projectData.length > 0 && projectData[0].featured_images && projectData[0].featured_images['2048x2048']
+            ? projectData[0].featured_images['2048x2048'].src
+            : '/default-og-image.jpg',
+        type: 'article'
+    });
 
     useEffect(() => {
         const fetchData = async () => {

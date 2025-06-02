@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 // eslint-disable-next-line
 import { motion } from 'framer-motion';
 import { REST_PATH } from '../globals/globals';
+import useSEO from '../hooks/useSEO';
 import Loading from '../components/Loading';
 import ContactForm from '../components/ContactForm';
 import heroImageAbout from '../images/483-2000x1000.jpg';
@@ -14,6 +15,11 @@ const AboutPage = () => {
 
     const [aboutRestData, setAboutRestData] = useState([]);
     const [aboutLoaded, setAboutLoaded] = useState(false);
+
+    useSEO({
+        title: "About Me",
+        description: "About Adam H - Front End Developer specializing in modern web development"
+    });
 
     useEffect(() => {
         const fetchAboutData = async () => {

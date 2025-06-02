@@ -1,9 +1,16 @@
 // eslint-disable-next-line
 import { motion } from 'framer-motion';
+import useSEO from '../hooks/useSEO';
 import ContactForm from '../components/ContactForm';
 
 
 const ContactPage = () => {
+
+useSEO({
+    title: "Contact Me",
+    description: "Get in touch with Adam H - Front End Developer specializing in modern web development"
+});
+
     return (
         <>
         

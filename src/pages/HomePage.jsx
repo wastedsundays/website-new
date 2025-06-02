@@ -2,12 +2,14 @@ import { useState, useEffect } from 'react';
 //eslint-disable-next-line
 import { motion } from 'framer-motion';
 import { REST_PATH } from '../globals/globals';
+import useSEO from '../hooks/useSEO';
 
 import FeaturedWork from '../components/FeaturedWork';
 import Loading from '../components/Loading';
 import ContactForm from '../components/ContactForm';
 import Toolbox from '../components/Toolbox';
 import heroImage from '../images/241-2000x1000.jpg';
+
 
 
 const HomePage = () => {
@@ -17,6 +19,11 @@ const HomePage = () => {
     const [homeData, setHomeData] = useState([]);
     const [featuredWorkData, setFeaturedWorkData] = useState([]);
     const [homeLoaded, setHomeLoaded] = useState(false);
+
+    useSEO({
+        title: "Home Page",
+        description: "Adam H - Front End Developer specializing in modern web development"
+    });
 
     useEffect(() => {
         const fetchHomeData = async () => {
@@ -44,6 +51,9 @@ const HomePage = () => {
 
     return (
         <>
+
+
+
 
         {homeLoaded ? (            
             <motion.main

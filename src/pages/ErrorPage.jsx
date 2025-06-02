@@ -1,8 +1,15 @@
 // eslint-disable-next-line
 import { motion } from 'framer-motion';
+import useSEO from '../hooks/useSEO';
 import errorImageWhite from '../images/error-image-white.jpg'
 
 const ErrorPage = () => {
+
+    useSEO({
+        title: "End of the Internet",
+        description: "The page you're looking for does not exist. Please check the URL or return to the homepage.",
+        robots: "noindex, nofollow"
+    });
     return (
         <motion.div
             initial={{ opacity: 0 }}
