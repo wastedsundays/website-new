@@ -18,7 +18,8 @@ const AboutPage = () => {
 
     useSEO({
         title: "About Me",
-        description: "About Adam H - Front End Developer specializing in modern web development"
+        description: "About Adam H - Front End Developer specializing in modern web development",
+        canonical: "https://www.adamh.ca/about"
     });
 
     useEffect(() => {

@@ -24,8 +24,8 @@ const SinglePage = () => {
 
     useSEO({
         title: projectData && projectData.length > 0 ? projectData[0].title.rendered : 'Project',
-        description: projectData && projectData.length > 0 && projectData[0].acf.project_description 
-            ? projectData[0].acf.project_description.replace(/<[^>]*>/g, '').substring(0, 160) // Strip HTML and limit length
+        description: projectData && projectData.length > 0 && projectData[0].acf.project_meta 
+            ? projectData[0].acf.project_meta.replace(/<[^>]*>/g, '').substring(0, 160) // Strip HTML and limit length
             : 'View this project by Adam H - Front End Developer',
         keywords: projectData && projectData.length > 0 && projectData[0].acf.work_tools
             ? `${projectData[0].title.rendered}, ${projectData[0].acf.work_tools.map(tool => tool.post_title).join(', ')}, portfolio, web development`
@@ -33,7 +33,8 @@ const SinglePage = () => {
         image: projectData && projectData.length > 0 && projectData[0].featured_images && projectData[0].featured_images['2048x2048']
             ? projectData[0].featured_images['2048x2048'].src
             : '/default-og-image.jpg',
-        type: 'article'
+        type: 'article',
+        canonical: `https://www.adamh.ca/work/${slug}`
     });
 
     useEffect(() => {

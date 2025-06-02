@@ -16,7 +16,8 @@ const WorkPage = () => {
 
     useSEO({
         title: "My Work",
-        description: "Adam H - Front End Developer specializing in modern web development"
+        description: "Adam H - Front End Developer specializing in modern web development",
+        canonical: "https://www.adamh.ca/work"
     });
 
     useEffect(() => {

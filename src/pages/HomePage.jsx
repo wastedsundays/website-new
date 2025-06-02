@@ -22,7 +22,8 @@ const HomePage = () => {
 
     useSEO({
         title: "Home Page",
-        description: "Adam H - Front End Developer specializing in modern web development"
+        description: "Adam H - Front End Developer specializing in modern web development",
+        canonical: "https://www.adamh.ca"
     });
 
     useEffect(() => {

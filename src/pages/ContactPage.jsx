@@ -8,7 +8,8 @@ const ContactPage = () => {
 
 useSEO({
     title: "Contact Me",
-    description: "Get in touch with Adam H - Front End Developer specializing in modern web development"
+    description: "Get in touch with Adam H - Front End Developer specializing in modern web development",
+    canonical: "https://www.adamh.ca/contact"
 });
 
     return (
