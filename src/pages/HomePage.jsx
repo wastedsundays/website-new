@@ -6,6 +6,7 @@ import { REST_PATH } from '../globals/globals';
 import FeaturedWork from '../components/FeaturedWork';
 import Loading from '../components/Loading';
 import ContactForm from '../components/ContactForm';
+import Toolbox from '../components/Toolbox';
 import heroImage from '../images/241-2000x1000.jpg';
 
 
@@ -69,7 +70,9 @@ const HomePage = () => {
                     <FeaturedWork featuredWorkData={featuredWorkData} />
                 </section>
 
-
+                    <section className='toolbox-section'>
+                        <Toolbox /> 
+                    </section>
 
                 <section className='contact-section'>
                     <ContactForm />

@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { REST_PATH } from '../globals/globals';
 import Loading from '../components/Loading';
-import Toolbox from '../components/Toolbox';
 import ContactForm from '../components/ContactForm';
 import heroImageAbout from '../images/483-2000x1000.jpg';
 
@@ -53,9 +52,6 @@ const AboutPage = () => {
                         <h2 className='step-5'>Making Things</h2>
                         <p>{aboutRestData.acf.about_preamble}</p>
                     </section>    
-                    <section className='toolbox-section'>
-                        <Toolbox /> 
-                    </section>
 
                     <section className='about-details-section'>
                         <div dangerouslySetInnerHTML={{ __html: aboutRestData.content.rendered }} />
