@@ -8,8 +8,15 @@ const ContactPage = () => {
 
 useSEO({
     title: "Contact Me",
-    description: "Get in touch with Adam H - Front End Developer specializing in modern web development",
-    canonical: "https://www.adamh.ca/contact"
+    description: "Get in touch with Adam H for your next web development project or employment opportunity. Available for freelance work, full-time positions, and remote opportunities in Vancouver and beyond. Let's discuss your WordPress, React, or custom development and design needs",
+    canonical: "https://www.adamh.ca/contact",
+    jsonLd: {
+        '@type': 'ContactPage',
+        '@id': 'https://www.adamh.ca/contact#contact',
+        url: 'https://www.adamh.ca/contact',
+        name: 'Contact Adam H',
+        description: 'Get in touch with Adam H for your next web development project or employment opportunity. Available for freelance work, full-time positions, and remote opportunities in Vancouver and beyond. Let\'s discuss your WordPress, React, or custom development and design needs.'
+    }
 });
 
     return (

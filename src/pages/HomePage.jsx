@@ -21,8 +21,7 @@ const HomePage = () => {
     const [homeLoaded, setHomeLoaded] = useState(false);
 
     useSEO({
-        title: "Home Page",
-        description: "Adam H - Front End Developer specializing in modern web development",
+        // title: "Home Page",
         canonical: "https://www.adamh.ca"
     });
 

@@ -34,7 +34,14 @@ const SinglePage = () => {
             ? projectData[0].featured_images['2048x2048'].src
             : '/default-og-image.jpg',
         type: 'article',
-        canonical: `https://www.adamh.ca/work/${slug}`
+        canonical: `https://www.adamh.ca/work/${slug}`,
+        jsonLd: {
+            '@type': 'CreativeWork',
+            '@id': `https://www.adamh.ca/work/${slug}#work`,
+            url: `https://www.adamh.ca/work/${slug}`,
+            name: projectData && projectData.length > 0 ? projectData[0].title.rendered : 'Project',
+            description: projectData && projectData.length > 0 && projectData[0].acf.project_meta 
+        }
     });
 
     useEffect(() => {

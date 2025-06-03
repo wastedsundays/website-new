@@ -18,8 +18,15 @@ const AboutPage = () => {
 
     useSEO({
         title: "About Me",
-        description: "About Adam H - Front End Developer specializing in modern web development",
-        canonical: "https://www.adamh.ca/about"
+        description: "Learn about Adam H, a front-end developer and designer from Vancouver specializing in React, WordPress, and modern web development. Discover my background, and a few other fun facts.",
+        canonical: "https://www.adamh.ca/about",
+        jsonLd: {
+            '@type': 'Person',
+            '@id': 'https://www.adamh.ca/about#person',
+            url: 'https://www.adamh.ca/about',
+            name: 'Adam H',
+            description: 'Learn about Adam H, a front-end developer and designer from Vancouver specializing in React, WordPress, and modern web development.'
+        }
     });
 
     useEffect(() => {

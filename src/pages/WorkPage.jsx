@@ -16,8 +16,15 @@ const WorkPage = () => {
 
     useSEO({
         title: "My Work",
-        description: "Adam H - Front End Developer specializing in modern web development",
-        canonical: "https://www.adamh.ca/work"
+        description: "Explore Adam H's portfolio of web development projects featuring WordPress sites, React applications, and custom designs. See examples of modern, responsive websites built with attention to detail and user experience.",
+        canonical: "https://www.adamh.ca/work",
+        jsonLd: {
+            '@type': 'CreativeWork',
+            '@id': 'https://www.adamh.ca/work#work',
+            url: 'https://www.adamh.ca/work',
+            name: 'Adam H - My Work',
+            description: 'Explore Adam H\'s portfolio of web development projects featuring WordPress sites, React applications, and custom designs. See examples of modern, responsive websites built with attention to detail and user experience.'
+        }
     });
 
     useEffect(() => {
