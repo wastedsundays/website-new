@@ -1,5 +1,8 @@
 @use 'variables';
 
+.error-page-container {
+    min-height: 100vh;
+}
 .error-page {
     margin-top: variables.$min-vh-rem;
     margin-bottom: variables.$min-vh-rem;

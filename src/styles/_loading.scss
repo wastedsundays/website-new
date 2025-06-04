@@ -15,6 +15,7 @@
     border-radius: 50%;
     display: grid;
     animation: l2 2s infinite linear;
+    border-color: var(--primary-color);
   }
   .loader:before,
   .loader:after {
@@ -24,6 +25,7 @@
     border-radius: 50%;
     animation: inherit;
     animation-duration: 3s;
+    border-color: var(--primary-text);
   }
   .loader:after {
     --s:-1;
