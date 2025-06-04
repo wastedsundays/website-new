@@ -10,9 +10,14 @@ import heroImageWork from '../images/210-2000x1000.jpg';
 
 const WorkPage = () => {
     const workRestPath = `${REST_PATH}ahdesigns-work?acf_format=standard`;
+    const workIntroPath = `${REST_PATH}pages/263?acf_format=standard`;
 
     const [workData, setWorkData] = useState([]);
+    const [workIntroData, setWorkIntroData] = useState(null);
     const [workLoaded, setWorkLoaded] = useState(false);
+    const [introLoaded, setIntroLoaded] = useState(false);
+
+    const allDataLoaded = workLoaded && introLoaded;
 
     useSEO({
         title: "My Work",
@@ -28,20 +33,42 @@ const WorkPage = () => {
     });
 
     useEffect(() => {
-        const fetchWorkData = async () => {
-            const workResponse = await fetch(workRestPath);
-            if (!workResponse.ok) {
+        const fetchAllData = async () => {
+            try {
+                // Fetch both API endpoints simultaneously
+                const [workResponse, introResponse] = await Promise.all([
+                    fetch(workRestPath),
+                    fetch(workIntroPath)
+                ]);
+
+                // Handle work data
+                if (!workResponse.ok) {
+                    setWorkLoaded(false);
+                    console.error('There was a problem fetching the work data');
+                } else {
+                    const workFetched = await workResponse.json();
+                    setWorkData(workFetched);
+                    setWorkLoaded(true);
+                }
+
+                // Handle intro data
+                if (!introResponse.ok) {
+                    setIntroLoaded(false);
+                    console.error('There was a problem fetching the intro data');
+                } else {
+                    const introFetched = await introResponse.json();
+                    setWorkIntroData(introFetched);
+                    setIntroLoaded(true);
+                }
+            } catch (error) {
+                console.error('Error fetching data:', error);
                 setWorkLoaded(false);
-                console.error('There was a problem fetching the work data');
-                return;
-            } else {
-                const workFetched = await workResponse.json();
-                setWorkData(workFetched);
-                setWorkLoaded(true);    
+                setIntroLoaded(false);
             }
-        }
-        fetchWorkData();
-    }, [workRestPath]);
+        };
+
+        fetchAllData();
+    }, [workRestPath, workIntroPath]);
 
     // Generate animation variants with custom delay for each card
     const getItemVariants = (index) => ({
@@ -60,7 +87,7 @@ const WorkPage = () => {
     return (
         <>
 
-            {workLoaded ? (
+            {allDataLoaded ? (
                 <>
                     <motion.main
                         initial={{ opacity: 0 }}
@@ -78,12 +105,7 @@ const WorkPage = () => {
                         </section>
                         
                         <section className='work-display'> 
-                            <div className='work-intro'>
-                                <p>Welcome to where the magic happens! As a front-end developer with a designer's eye and a data wizard's mind, I craft experiences that are as functional as they are beautiful.</p>
-                                <p>Each project here represents a unique challenge—whether it's building lightning-fast interfaces, wrangling complex databases, or creating visual designs that tell a story. Dive in, click around, and see how I transform ideas into digital reality.</p>
-                                <p>When I'm not nerding out over clean code or pixel-perfect designs, I'm probably tinkering with new tech or finding creative ways to visualize data. Every project is a puzzle, and I've never met one I didn't want to solve.</p>
-                                <p>Go ahead—explore my digital handiwork and see what happens when technical skills meet creative thinking.</p>
-                            </div>
+                            <div className='work-intro'dangerouslySetInnerHTML={{ __html: workIntroData.acf.work_intro_text }}></div>
                             <div className='work-grid'>
                                 {workData.map((project, i) => {
                                     // Check if the project should have the 'featured-project' class
