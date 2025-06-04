@@ -8,7 +8,6 @@ import FeaturedWork from '../components/FeaturedWork';
 import Loading from '../components/Loading';
 import ContactForm from '../components/ContactForm';
 import Toolbox from '../components/Toolbox';
-import heroImage from '../images/241-2000x1000.jpg';
 
 
 
@@ -64,7 +63,15 @@ const HomePage = () => {
             >
                 <section className='hero-section'>
                     <div className='hero-image'>
-                            <img src={heroImage} alt='Hero Image' />
+                            {/* <img src={heroImage} alt='Hero Image' /> */}
+                                {homeData.featured_images['2048x2048'] && (
+                                    <img
+                                        src={homeData.featured_images['2048x2048'].src}
+                                        srcSet={homeData.featured_images['2048x2048'].srcset}
+                                        sizes='100vw'
+                                        alt={homeData.featured_images['2048x2048'].alt}
+                                    />
+                                )}
                     </div>
                     <div className='hero-overlay'>
                         <h1 className='step-7'>Adam H</h1>

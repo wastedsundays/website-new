@@ -6,7 +6,6 @@ import { REST_PATH } from '../globals/globals';
 import useSEO from '../hooks/useSEO';
 import Loading from '../components/Loading';
 import ContactForm from '../components/ContactForm';
-import heroImageWork from '../images/210-2000x1000.jpg';
 
 const WorkPage = () => {
     const workRestPath = `${REST_PATH}ahdesigns-work?acf_format=standard`;
@@ -97,7 +96,15 @@ const WorkPage = () => {
                     >
                         <section className='hero-section'>
                             <div className='hero-image'>
-                                <img src={heroImageWork} alt="Hero" />
+                                {/* <img src={heroImageWork} alt="Hero" /> */}
+                                {workIntroData.featured_images['2048x2048'] && (
+                                    <img
+                                        src={workIntroData.featured_images['2048x2048'].src}
+                                        srcSet={workIntroData.featured_images['2048x2048'].srcset}
+                                        sizes='100vw'
+                                        alt={workIntroData.featured_images['2048x2048'].alt}
+                                    />
+                                )}
                             </div>
                             <div className='hero-overlay'>
                                 <h1 className='step-6'>My Work</h1>

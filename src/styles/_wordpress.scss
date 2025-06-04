@@ -2,7 +2,7 @@
 @use 'variables';
 
 
-.wp-home-section .wp-block-group, .work-display .work-intro, .about-page .intro-section, .project-overview, .project-requirements, .key-features, .development-process {
+.wp-home-section .wp-block-group, .work-display .work-intro, .about-page .intro-section, .project-overview, .project-requirements, .key-features, .development-process, .project-mockup {
     width: 90%;
     max-width: 55rem;
     margin: 0 auto variables.$min-vh-rem;
@@ -57,13 +57,13 @@
 }
 
 
-.project-requirements.alignfull, .wp-block-group.alignfull, .key-features.alignfull, .development-process.alignfull {
+.project-requirements.alignfull, .wp-block-group.alignfull, .key-features.alignfull, .development-process.alignfull, .project-mockup.alignfull {
         width: 90%;
         max-width: 85rem;
         margin: 0 auto variables.$min-vh-rem;
 }
 
-.project-requirements.alignwide, .wp-block-group.alignwide, .key-features.alignwide, .development-process.alignwide {
+.project-requirements.alignwide, .wp-block-group.alignwide, .key-features.alignwide, .development-process.alignwide, .project-mockup.alignwide {
         width: 90%;
         max-width: 70rem;
         margin: 0 auto variables.$min-vh-rem;

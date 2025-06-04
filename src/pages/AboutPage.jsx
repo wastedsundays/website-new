@@ -5,13 +5,12 @@ import { REST_PATH } from '../globals/globals';
 import useSEO from '../hooks/useSEO';
 import Loading from '../components/Loading';
 import ContactForm from '../components/ContactForm';
-import heroImageAbout from '../images/483-2000x1000.jpg';
 
 
 
 const AboutPage = () => {
 
-    const aboutRestPath = `${ REST_PATH }pages/104`;
+    const aboutRestPath = `${ REST_PATH }pages/104?acf_format=standard`;
 
     const [aboutRestData, setAboutRestData] = useState([]);
     const [aboutLoaded, setAboutLoaded] = useState(false);
@@ -56,15 +55,22 @@ const AboutPage = () => {
                 transition={{ duration: 1.5 }}>                    
                     <section className='hero-section'>
                         <div className='hero-image'>
-                            <img src={heroImageAbout} alt="Hero" />
+                            {/* <img src={heroImageAbout} alt="Hero" /> */}
+                                {aboutRestData.featured_images['2048x2048'] && (
+                                    <img
+                                        src={aboutRestData.featured_images['2048x2048'].src}
+                                        srcSet={aboutRestData.featured_images['2048x2048'].srcset}
+                                        sizes='100vw'
+                                        alt={aboutRestData.featured_images['2048x2048'].alt}
+                                    />
+                                )}
                         </div>
                         <div className='hero-overlay'>
                             <h1 className='step-6'>About Adam</h1>
                         </div>
                     </section>
                     <section className='intro-section'>
-                        <h2 className='step-5'>Making Things</h2>
-                        <p>{aboutRestData.acf.about_preamble}</p>
+                        <div dangerouslySetInnerHTML={{ __html: aboutRestData.acf.about_preamble }} />
                     </section>    
 
                     <section className='about-details-section'>
