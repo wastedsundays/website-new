@@ -10,14 +10,33 @@
 
   </head>
     <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VCVNV2YS66"></script>
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-VCVNV2YS66"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
 
     gtag('config', 'G-VCVNV2YS66');
-  </script>
+  </script> -->
+
+  <script>
+  // Wait 3 seconds after page load before loading GA
+  window.addEventListener('load', function() {
+    setTimeout(function() {
+      var script = document.createElement('script');
+      script.async = true;
+      script.src = 'https://www.googletagmanager.com/gtag/js?id=G-VCVNV2YS66';
+      document.head.appendChild(script);
+      
+      script.onload = function() {
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-VCVNV2YS66');
+      };
+    }, 3000);
+  });
+</script>
 
   <body>
     <div id="root"></div>
