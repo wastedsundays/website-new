@@ -9,8 +9,11 @@ const ContactForm = () => {
     const [formData, setFormData] = useState({
         user_name: '',
         user_email: '',
-        message: ''
+        message: '',
+        website: '' // Honeypot field
     });
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submitTime] = useState(Date.now()); // For timing check
 
     const { emailSent, setEmailSent } = useContext(EmailContext);
 
@@ -23,8 +26,26 @@ const ContactForm = () => {
 
     const sendEmail = async (event) => {
         event.preventDefault();
+        
+        // Prevent double submission
+        if (isSubmitting) return;
+        
+        // Time-based spam check (form filled too quickly)
+        const fillTime = Date.now() - submitTime;
+        if (fillTime < 3000) { // Less than 3 seconds
+            alert('Please take a moment to review your message.');
+            return;
+        }
+        
+        setIsSubmitting(true);
+        
         try {
-            const response = await fetch('http://localhost/mail-endpoint.php', {
+            // Use production URL
+            const endpoint = process.env.NODE_ENV === 'production' 
+                ? 'https://adamh.ca/mail-endpoint.php'
+                : 'http://localhost/mail-endpoint-dev.php';
+                
+            const response = await fetch(endpoint, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -32,19 +53,24 @@ const ContactForm = () => {
                 body: JSON.stringify(formData),
             });
 
-            const responseText = await response.text();
-            console.log(responseText);
-            console.log('Response:', response.status)
-
-            if (response.ok) {
+            const responseData = await response.json();
+            
+            if (response.ok && responseData.status === 'success') {
                 setEmailSent(true);
             } else {
-                alert('There was an error sending your message. Please try again. Response Not Ok.');
+                const errorMessage = responseData.message || 'There was an error sending your message.';
+                if (response.status === 429) {
+                    alert('Too many requests. Please wait a moment before trying again.');
+                } else {
+                    alert(`Error: ${errorMessage}`);
+                }
             }
 
         } catch (error) {
             console.error('Error:', error);
-            alert('There was an error sending your message. Please try again.');
+            alert('There was an error sending your message. Please check your connection and try again.');
+        } finally {
+            setIsSubmitting(false);
         }
     }
 
@@ -67,7 +93,6 @@ const ContactForm = () => {
                         <IconGit />
                         </a>
                     </div>
-
                 </div>
             ) : (
                 <>
@@ -77,29 +102,74 @@ const ContactForm = () => {
                         ) : (
                         <h2 className='contact-heading step-5'>Hello!</h2>
                     )}
-
-                    <p>I&apos;d love to hear from you! Whether you have a question about what I do (or about your current website), a collaboration opportunity,  or you just want to say hi, feel free to reach out.</p>
+                    <p>I&apos;d love to hear from you! Whether you have a question about what I do (or about your current website), a collaboration opportunity, or you just want to say hi, feel free to reach out.</p>
                 </div>
                 <form className='contact-form' onSubmit={sendEmail}>
-                    <div style={{ display: 'none'}}>
+                    {/* Enhanced honeypot */}
+                    <div style={{ 
+                        position: 'absolute', 
+                        left: '-9999px', 
+                        opacity: 0, 
+                        pointerEvents: 'none' 
+                    }}>
                         <label htmlFor='website'>Leave this field blank</label>
-                        <input type='text' id='website' name='website' autoComplete='off' tabIndex='-1' onChange={handleChange} />
+                        <input 
+                            type='text' 
+                            id='website' 
+                            name='website' 
+                            autoComplete='off' 
+                            tabIndex='-1' 
+                            onChange={handleChange} 
+                            value={formData.website}
+                        />
                     </div>
                     <div>
                         <label className='step--1' htmlFor='user_name'>Name *</label>
-                        <input type='text' id='user_name' name='user_name' aria-required='true' required onChange={handleChange}/>
+                        <input 
+                            type='text' 
+                            id='user_name' 
+                            name='user_name' 
+                            aria-required='true' 
+                            required 
+                            onChange={handleChange}
+                            value={formData.user_name}
+                            maxLength='100'
+                        />
                     </div>
                     <div>
                         <label className='step--1' htmlFor='user_email'>Email *</label>
-                        <input type='email' id='user_email' name='user_email' aria-required='true' required onChange={handleChange}/>
+                        <input 
+                            type='email' 
+                            id='user_email' 
+                            name='user_email' 
+                            aria-required='true' 
+                            required 
+                            onChange={handleChange}
+                            value={formData.user_email}
+                            maxLength='254'
+                        />
                     </div>
                     <div>
                         <label className='step--1' htmlFor='message'>Message *</label>
-                        <textarea id='message' name='message' aria-required='true' required onChange={handleChange}></textarea>
+                        <textarea 
+                            id='message' 
+                            name='message' 
+                            aria-required='true' 
+                            required 
+                            onChange={handleChange}
+                            value={formData.message}
+                            maxLength='2000'
+                            rows='5'
+                        ></textarea>
                     </div>
 
-                    <button className='submit-button' type='submit' value='Send'>Send</button>
-
+                    <button 
+                        className='submit-button' 
+                        type='submit' 
+                        disabled={isSubmitting}
+                    >
+                        {isSubmitting ? 'Sending...' : 'Send'}
+                    </button>
                 </form>
                 </>
             )}
