@@ -19,7 +19,8 @@
 @font-face {
   font-family: "Edo";
   src: local("Edo"),
-  url("../fonts/edo-webfont.woff") format("woff");
+  url("/fonts/edo-webfont.woff") format("woff");
+  font-display: swap;
 }
 
 body {
