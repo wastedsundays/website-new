@@ -40,7 +40,7 @@ const ContactForm = () => {
         setIsSubmitting(true);
         
         try {
-            // Use production URL
+            // Use production URL - update this to your actual domain
             const endpoint = process.env.NODE_ENV === 'production' 
                 ? 'https://adamh.ca/mail-endpoint.php'
                 : 'http://localhost/mail-endpoint-dev.php';
@@ -61,8 +61,10 @@ const ContactForm = () => {
                 const errorMessage = responseData.message || 'There was an error sending your message.';
                 if (response.status === 429) {
                     alert('Too many requests. Please wait a moment before trying again.');
+                } else if (response.status >= 400 && response.status < 500) {
+                    alert(errorMessage); // Show validation errors
                 } else {
-                    alert(`Error: ${errorMessage}`);
+                    alert('There was an error sending your message. Please try again later.');
                 }
             }
 
