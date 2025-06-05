@@ -94,21 +94,38 @@ const SinglePage = () => {
                     <>
 
                         <section className='hero-section'>
-                            <div className='hero-image'>
-                                {projectData[0].featured_images['2048x2048'] && (
-                                    <img
-                                        src={projectData[0].featured_images['2048x2048'].src}
-                                        srcSet={projectData[0].featured_images['2048x2048'].srcset}
-                                        sizes='100vw'
-                                        alt={projectData[0].featured_images['2048x2048'].alt}
-                                        className='featured-work-image'
-                                    />
-                                )}
-                            </div>
+
                             <div className='hero-overlay'>
                                 <h1 className='step-5'>{projectData[0].title.rendered}</h1>
-                                
                             </div>
+                            <div className='hero-image'>
+                                {projectData[0].featured_images['2048x2048'] && (
+                                    <picture>
+                                        {/* Only add mobile source if mobile images exist */}
+                                        {projectData[0].featured_images['mobile-hero'] && (
+                                            <source 
+                                                media="(max-width: 768px)" 
+                                                srcSet={
+                                                    projectData[0].featured_images['mobile-hero-2x'] 
+                                                        ? `${projectData[0].featured_images['mobile-hero-2x'].src} 2x, ${projectData[0].featured_images['mobile-hero'].src} 1x`
+                                                        : projectData[0].featured_images['mobile-hero'].src
+                                                }
+                                            />
+                                        )}
+                                        
+                                        {/* Desktop fallback */}
+                                        <img
+                                            src={projectData[0].featured_images['2048x2048'].src}
+                                            srcSet={projectData[0].featured_images['2048x2048'].srcset}
+                                            sizes="(max-width: 768px) 100vw, 2048px"
+                                            alt={projectData[0].featured_images['2048x2048'].alt}
+                                            loading="eager"
+                                            fetchPriority="high"
+                                        />
+                                    </picture>
+                                )}
+                            </div>
+
                         </section>
 
                         <section className='project-details-section'>

@@ -61,22 +61,41 @@ const HomePage = () => {
             exit={{ opacity: 0 }}
             transition={{ duration: 1.5 }}
             >
+
                 <section className='hero-section'>
-                    <div className='hero-image'>
-                            {/* <img src={heroImage} alt='Hero Image' /> */}
-                                {homeData.featured_images['2048x2048'] && (
-                                    <img
-                                        src={homeData.featured_images['2048x2048'].src}
-                                        srcSet={homeData.featured_images['2048x2048'].srcset}
-                                        sizes='100vw'
-                                        alt={homeData.featured_images['2048x2048'].alt}
-                                    />
-                                )}
-                    </div>
+
                     <div className='hero-overlay'>
                         <h1 className='step-7'>Adam H</h1>
                         <p>Front End Developer</p>
                     </div>
+                    <div className='hero-image'>
+                        {homeData.featured_images['2048x2048'] && (
+                            <picture>
+                                {/* Only add mobile source if mobile images exist */}
+                                {homeData.featured_images['mobile-hero'] && (
+                                    <source 
+                                        media="(max-width: 768px)" 
+                                        srcSet={
+                                            homeData.featured_images['mobile-hero-2x'] 
+                                                ? `${homeData.featured_images['mobile-hero-2x'].src} 2x, ${homeData.featured_images['mobile-hero'].src} 1x`
+                                                : homeData.featured_images['mobile-hero'].src
+                                        }
+                                    />
+                                )}
+                                
+                                {/* Desktop fallback */}
+                                <img
+                                    src={homeData.featured_images['2048x2048'].src}
+                                    srcSet={homeData.featured_images['2048x2048'].srcset}
+                                    sizes="(max-width: 768px) 100vw, 2048px"
+                                    alt={homeData.featured_images['2048x2048'].alt}
+                                    loading="eager"
+                                    fetchPriority="high"
+                                />
+                            </picture>
+                        )}
+                    </div>
+
                 </section>
 
                 <section className='wp-home-section'>

@@ -95,20 +95,38 @@ const WorkPage = () => {
                         transition={{ duration: 1.5 }}
                     >
                         <section className='hero-section'>
-                            <div className='hero-image'>
-                                {/* <img src={heroImageWork} alt="Hero" /> */}
-                                {workIntroData.featured_images['2048x2048'] && (
-                                    <img
-                                        src={workIntroData.featured_images['2048x2048'].src}
-                                        srcSet={workIntroData.featured_images['2048x2048'].srcset}
-                                        sizes='100vw'
-                                        alt={workIntroData.featured_images['2048x2048'].alt}
-                                    />
-                                )}
-                            </div>
+
                             <div className='hero-overlay'>
                                 <h1 className='step-6'>My Work</h1>
                             </div>
+                            <div className='hero-image'>
+                                {workIntroData.featured_images['2048x2048'] && (
+                                    <picture>
+                                        {/* Only add mobile source if mobile images exist */}
+                                        {workIntroData.featured_images['mobile-hero'] && (
+                                            <source 
+                                                media="(max-width: 768px)" 
+                                                srcSet={
+                                                    workIntroData.featured_images['mobile-hero-2x'] 
+                                                        ? `${workIntroData.featured_images['mobile-hero-2x'].src} 2x, ${workIntroData.featured_images['mobile-hero'].src} 1x`
+                                                        : workIntroData.featured_images['mobile-hero'].src
+                                                }
+                                            />
+                                        )}
+                                        
+                                        {/* Desktop fallback */}
+                                        <img
+                                            src={workIntroData.featured_images['2048x2048'].src}
+                                            srcSet={workIntroData.featured_images['2048x2048'].srcset}
+                                            sizes="(max-width: 768px) 100vw, 2048px"
+                                            alt={workIntroData.featured_images['2048x2048'].alt}
+                                            loading="eager"
+                                            fetchPriority="high"
+                                        />
+                                    </picture>
+                                )}
+                            </div>
+
                         </section>
                         
                         <section className='work-display'> 

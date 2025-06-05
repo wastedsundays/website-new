@@ -53,21 +53,40 @@ const AboutPage = () => {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 1.5 }}>                    
+
                     <section className='hero-section'>
-                        <div className='hero-image'>
-                            {/* <img src={heroImageAbout} alt="Hero" /> */}
-                                {aboutRestData.featured_images['2048x2048'] && (
-                                    <img
-                                        src={aboutRestData.featured_images['2048x2048'].src}
-                                        srcSet={aboutRestData.featured_images['2048x2048'].srcset}
-                                        sizes='100vw'
-                                        alt={aboutRestData.featured_images['2048x2048'].alt}
-                                    />
-                                )}
-                        </div>
+
                         <div className='hero-overlay'>
                             <h1 className='step-6'>About Adam</h1>
                         </div>
+                        <div className='hero-image'>
+                            {aboutRestData.featured_images['2048x2048'] && (
+                                <picture>
+                                    {/* Only add mobile source if mobile images exist */}
+                                    {aboutRestData.featured_images['mobile-hero'] && (
+                                        <source 
+                                            media="(max-width: 768px)" 
+                                            srcSet={
+                                                aboutRestData.featured_images['mobile-hero-2x'] 
+                                                    ? `${aboutRestData.featured_images['mobile-hero-2x'].src} 2x, ${aboutRestData.featured_images['mobile-hero'].src} 1x`
+                                                    : aboutRestData.featured_images['mobile-hero'].src
+                                            }
+                                        />
+                                    )}
+                                    
+                                    {/* Desktop fallback */}
+                                    <img
+                                        src={aboutRestData.featured_images['2048x2048'].src}
+                                        srcSet={aboutRestData.featured_images['2048x2048'].srcset}
+                                        sizes="(max-width: 768px) 100vw, 2048px"
+                                        alt={aboutRestData.featured_images['2048x2048'].alt}
+                                        loading="eager"
+                                        fetchPriority="high"
+                                    />
+                                </picture>
+                            )}
+                        </div>
+
                     </section>
                     <section className='intro-section'>
                         <div dangerouslySetInnerHTML={{ __html: aboutRestData.acf.about_preamble }} />
