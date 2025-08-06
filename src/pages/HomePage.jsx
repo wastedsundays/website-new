@@ -66,7 +66,7 @@ const HomePage = () => {
 
                     <div className='hero-overlay'>
                         <h1 className='step-7'>Adam H</h1>
-                        <p>Front End Developer</p>
+                        <p>Web Developer & Designer</p>
                     </div>
                     <div className='hero-image'>
                         {homeData.featured_images['2048x2048'] && (
