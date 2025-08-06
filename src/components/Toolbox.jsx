@@ -3,7 +3,8 @@ import Isotope from 'isotope-layout';
 import { REST_PATH } from '../globals/globals';
 
 const Toolbox = () => {
-    const toolsRestPath = `${REST_PATH}ahdesigns-tools?acf_format=standard&filter[orderby]=slug&order=asc&per_page=100`
+    const toolsRestPath = `${REST_PATH}ahdesigns-tools?acf_format=standard&orderby=title&order=asc&per_page=100`
+    // const toolsRestPath = `${REST_PATH}ahdesigns-tools?acf_format=standard&filter[orderby]=slug&order=asc&per_page=100`
 
     const [restToolsData, setToolsData] = useState([])    
     const [toolsLoaded, setToolsLoaded] = useState(false)
