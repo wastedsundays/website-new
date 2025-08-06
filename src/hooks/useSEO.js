@@ -2,8 +2,8 @@
 import { useEffect, useRef } from 'react';
 
 const useSEO = ({
-  title = 'Adam H. - Front End Developer',
-  description = 'Adam H - Experienced front-end developer and designer creating modern, responsive web applications with WordPress, React, JavaScript, and intuitive UI/UX design. View my portfolio of projects and get in touch.',
+  title = 'Adam H. - Web Developer & Designer',
+  description = 'Adam H - Experienced web developer and designer creating modern, responsive web applications with WordPress, React, JavaScript, and intuitive UI/UX design. View my portfolio of projects and get in touch.',
   keywords = 'WordPress, React, PHP, HTML, CSS, JavaScript, SQL, Figma, Illustrator, Photoshop, Web Development, Website Design, Freelance Developer, Custom WordPress themes, Vancouver, Canada, Remote, Responsive Design, Accessibility, SEO, Performance Optimization',
   image = '/default-og-image.jpg',
   type = 'website',
@@ -20,14 +20,14 @@ const useSEO = ({
 }) => {
 
   // Handle cases where data might be null/undefined (still loading)
-  const safeTitle = title || 'Adam H. - Front End Developer';
-  const safeDescription = description || 'Adam H - Experienced front-end developer and designer creating modern, responsive web applications with WordPress, React, JavaScript, and intuitive UI/UX design. View my portfolio of projects and get in touch.';
+  const safeTitle = title || 'Adam H. - Web Developer & Designer';
+  const safeDescription = description || 'Adam H - Experienced web developer and designer creating modern, responsive web applications with WordPress, React, JavaScript, and intuitive UI/UX design. View my portfolio of projects and get in touch.';
   const safeKeywords = keywords || 'WordPress, React, PHP, HTML, CSS, JavaScript, SQL, Figma, Illustrator, Photoshop, Web Development, Website Design, Freelance Developer, Custom WordPress themes, Vancouver, Canada, Remote, Responsive Design, Accessibility, SEO, Performance Optimization';
   const safeImage = image || '/default-og-image.jpg';
   const safeRobots = robots || 'index, follow'; // Added safe robots
   const safeCanonical = canonical; // Keep null if not provided
   
-  const fullTitle = safeTitle === 'Adam H. - Front End Developer' ? safeTitle : `${safeTitle} | Adam H. - Front End Developer`;
+  const fullTitle = safeTitle === 'Adam H. - Web Developer & Designer' ? safeTitle : `${safeTitle} | Adam H. - Web Developer & Designer`;
   const createdTags = useRef(new Set());
 
   useEffect(() => {
@@ -127,7 +127,7 @@ const useSEO = ({
       "@type": jsonLd['@type'] || 'Person',
       "@id": jsonLd['@id'] || safeCanonical || undefined,
       "name": jsonLd.name || 'Adam H',
-      "jobTitle": "Front-End Developer & Designer",
+      "jobTitle": "Web Developer & Designer",
       "description": jsonLd.description || safeDescription,
       "url": jsonLd.url || 'https://www.adamh.ca',
       "sameAs": [
